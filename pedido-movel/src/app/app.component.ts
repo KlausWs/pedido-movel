@@ -7,6 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { Produtos } from '../pages/principal/produtos/Produtos';
 
+import { Produto } from '../entidades/Produto';
+import { Grupo } from '../entidades/Grupo';
+import { FormaPagamento } from '../entidades/FormaPagamento';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -14,8 +18,11 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-
   pages: Array<{title: string, component: any}>;
+
+  produtos: Array<Produto>;
+  grupos: Array<Grupo>;
+  formasPagamento: Array<FormaPagamento>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -43,4 +50,5 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
 }

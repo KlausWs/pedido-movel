@@ -1,3 +1,5 @@
+import { ClienteController } from './../pages/cliente/ClienteController';
+import { PedidoController } from './../pages/pedido/PedidoController';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -5,11 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { Produtos } from '../pages/principal/produtos/Produtos';
+import { ProdutosController } from '../pages/produtos/ProdutosController';
+import { GruposController } from '../pages/grupos/GruposController';
 
-import { Produto } from '../entidades/Produto';
-import { Grupo } from '../entidades/Grupo';
-import { FormaPagamento } from '../entidades/FormaPagamento';
 
 @Component({
   templateUrl: 'app.html'
@@ -18,11 +18,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-  pages: Array<{title: string, component: any}>;
-
-  produtos: Array<Produto>;
-  grupos: Array<Grupo>;
-  formasPagamento: Array<FormaPagamento>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -30,7 +26,9 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Produtos', component: Produtos },
+      { title: 'Grupos', component: GruposController },
+      { title: 'Carrinho', component: PedidoController },
+      { title: 'Cliente', component: ClienteController },
       { title: 'List', component: ListPage }
     ];
 
@@ -48,7 +46,7 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.push(page.component);
   }
 
 }

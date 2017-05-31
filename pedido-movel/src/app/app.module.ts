@@ -1,3 +1,6 @@
+import { ClienteController } from './../pages/cliente/ClienteController';
+import { FinalizacaoController } from './../pages/finalizacao/FinalizacaoController';
+import { PedidoController } from './../pages/pedido/PedidoController';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -5,7 +8,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { Produtos } from '../pages/principal/produtos/Produtos';
+import { ProdutosController } from '../pages/produtos/ProdutosController';
+import { GruposController } from '../pages/grupos/GruposController';
+import { DetalheProdutoController } from './../pages/detalheproduto/DetalheProdutoController';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +20,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    Produtos,
+    ProdutosController,
+    GruposController,
+    DetalheProdutoController,
+    PedidoController,
+    FinalizacaoController,
+    ClienteController
   ],
   imports: [
     BrowserModule,
@@ -26,7 +36,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     HomePage,
     ListPage,
-    Produtos
+    ProdutosController,
+    GruposController,
+    DetalheProdutoController,
+    PedidoController,
+    FinalizacaoController,
+    ClienteController
   ],
   providers: [
     StatusBar,

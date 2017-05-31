@@ -15,7 +15,7 @@
       <h2>{{produto.codigo}}</h2>
       <p>{{produto.nome}}</p>
       <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
-      <button ion-button clear item-end>View</button>
+      <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
     </ion-item>
 
   </ion-list>

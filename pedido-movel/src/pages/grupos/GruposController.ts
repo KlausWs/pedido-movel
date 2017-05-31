@@ -8,7 +8,7 @@ import { ProdutosController } from '../produtos/ProdutosController';
 export class GruposController { 
   
   constructor(public navCtrl: NavController) {
-
+    
   }
 
   search() {

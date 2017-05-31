@@ -7,7 +7,7 @@ import { Produto } from '../../../entidades/Produto';
   providers: [ProdutoService]
 })
 
-export class Produtos { 
+export class ProdutosController { 
 
   produtoService: ProdutoService;
 

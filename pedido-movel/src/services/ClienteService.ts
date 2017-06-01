@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Cliente } from '../entidades/Cliente';
 
 @Injectable()
@@ -35,5 +34,4 @@ export class ClienteService {
             { nome: 'REDECARD', codigo: '2000', email: 'MANOEL.CORREA@REDECARD.COM.BR', telefone: '08007284433' }
         ];
     }
-
 }

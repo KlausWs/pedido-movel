@@ -1,7 +1,6 @@
+import { Grupo } from './../entidades/Grupo';
 import { Injectable } from '@angular/core';
-
 import { Produto } from '../entidades/Produto';
-import { Grupo } from '../entidades/Grupo';
 
 @Injectable()
 export class ProdutoService {
@@ -10,6 +9,14 @@ export class ProdutoService {
 
     constructor() {
         this.initializeProducts();
+    }
+
+    filterByGroup(grupo: Grupo){
+        return this.produtos.filter(produto => produto.grupo.codigo === grupo.codigo);
+    }
+
+    filterByText(value: string){
+        return this.produtos.filter(produto => produto.nome.indexOf(value.toUpperCase()) >= 0 || produto.codigo.indexOf(value.toUpperCase()) >= 0);
     }
 
 
@@ -215,7 +222,6 @@ export class ProdutoService {
             { imagem: '', nome: 'CEL. IPHONE SE 16GB DOURADO', codigo: '024229', quantidade: 1.00000, grupo: { imagem: '', nome: 'CELULAR', codigo: '0068' } },
             { imagem: '', nome: 'CAMINHAO PLASTILINDO 405 RESGATE ANIMAL  REF:405(12230)', codigo: '017643', quantidade: 2.00000, grupo: { imagem: '', nome: 'BRINQUEDOS ELETRICOS', codigo: '0176' } },
             { imagem: '', nome: 'PISTOLA PINTURA BLACK E DECKER BDPH400  REF:BDPH400 450W(12624)', codigo: '018070', quantidade: 2.00000, grupo: { imagem: '', nome: 'PINTURA', codigo: '0252' } }
-
         ];
     }
 

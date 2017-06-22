@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.logo-default {
+    width: 123px;
+    height: 40px;
+    background-image: url(/assets/img/logo-light.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    position: relative;
+}
+
+.basket {
+    float: right;
+    font-size: 36px;
+    color: #fff;
+    height: 100px;
+    max-height: 100px;
+    display: block;
+    position: relative;
+}
+
+.basket-text {
+    font-size: 20px !important;
+    font-family: "Open Sans";
+    text-align: center;
+    height: 100px;
+    max-height: 100px;
+}

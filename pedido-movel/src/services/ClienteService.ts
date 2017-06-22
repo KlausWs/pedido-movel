@@ -30,8 +30,7 @@ export class ClienteService {
             { nome: 'ANGELICA SEMPREBOM GOMES', codigo: '46042', email: 'ANGELIKA_SEMPREBOM@HOTMAIL.COM', telefone: '4899318249' },
             { nome: 'DANIELLE RECO DE NES', codigo: '46095', email: 'DANY_DENES@HOTMAIL.COM', telefone: '4896048454' },
             { nome: 'LUCAS DEREK  SOUZA VIEIRA', codigo: '31598', email: 'LUCCAS_963@HOTMAIL.COM', telefone: '4896445346' },
-            { nome: 'TAIS NEOTTI MAIA', codigo: '159911', email: 'TAISNEOTTY@HOTMAIL.COM', telefone: '4896533826' },
-            { nome: 'REDECARD', codigo: '2000', email: 'MANOEL.CORREA@REDECARD.COM.BR', telefone: '08007284433' }
+            { nome: 'TAIS NEOTTI MAIA', codigo: '159911', email: 'TAISNEOTTY@HOTMAIL.COM', telefone: '4896533826' }
         ];
     }
 }

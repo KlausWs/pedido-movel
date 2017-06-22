@@ -5,9 +5,7 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import { ProdutosController } from '../pages/produtos/ProdutosController';
 import { GruposController } from '../pages/grupos/GruposController';
 
 
@@ -17,7 +15,7 @@ import { GruposController } from '../pages/grupos/GruposController';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = GruposController;
   pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
@@ -25,8 +23,6 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Grupos', component: GruposController },
       { title: 'Carrinho', component: PedidoController },
       { title: 'Cliente', component: ClienteController },
       { title: 'List', component: ListPage }

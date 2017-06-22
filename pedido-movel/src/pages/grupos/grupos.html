@@ -3,11 +3,13 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <div class="logo-default" style="display: inline-block"></div>
-    <div class="basket">
-      <div class="basket-text">Itens do pedido</div>
-      <div class="fa fa-fw fa-shopping-basket"></div>
-    </div>
+    <div class="logo-default"></div>
+    <ion-buttons end>
+      <button (click)="myFunction()" class="basket-text" ion-button>
+        Itens do pedido
+      </button>
+      <button (click)="myFunction()" class="fa fa-fw fa-shopping-basket basket" ion-button icon-only></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -15,11 +17,20 @@
   <ion-searchbar (ionInput)="searchByText($event)">
   </ion-searchbar>
 
+  <ion-card>
+  <img src="img/nin-live.png"/>
+  <ion-card-content>
+    <ion-card-title>
+      Campanha
+      </ion-card-title>
+    <p>
+      Conteudo de uma campanha promocional.
+    </p>
+  </ion-card-content>
+</ion-card>
+
 
   <ion-grid>
-    <ion-row>
-      <ion-col col-12>Campanha</ion-col>
-    </ion-row>
     <ion-row row>
       <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
         <button ion-button clear item-end (click)='searchByGroup(grupo)'>{{grupo.codigo}} - {{grupo.nome}}</button>
@@ -28,4 +39,7 @@
   </ion-grid>
 
 
+
+
 </ion-content>
+

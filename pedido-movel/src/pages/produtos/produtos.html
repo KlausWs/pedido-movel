@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-searchbar (ionInput)="consultarProdutos($event)"></ion-searchbar>
   <ion-list>
 
     <ion-item *ngFor="let produto of produtos">
@@ -16,6 +16,7 @@
       <p>{{produto.nome}}</p>
       <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
       <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
+      
     </ion-item>
 
   </ion-list>

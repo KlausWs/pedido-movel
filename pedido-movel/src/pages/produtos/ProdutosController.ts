@@ -18,16 +18,20 @@ export class ProdutosController {
   constructor(private _produtoService: ProdutoService, public navCtrl: NavController, public navParam: NavParams) {
     this.produtoService = _produtoService;
 
-    let grupo = navParam.get('grupo')
-    if (grupo) {
-      this.produtos = this.produtoService.filterByGroup(grupo);
-    } else {
-      this.produtos = this.produtoService.filterByText(navParam.get('value'));
+    if (navParam) {
+      let grupo = navParam.get('grupo')
+      if (grupo) {
+        this.produtos = this.produtoService.filterByGroup(grupo);
+      }
     }
-
   }
 
   exibirDetalhes() {
     this.navCtrl.push(DetalheProdutoController);
   }
+
+  consultarProdutos(ev: any) {
+    this.produtos = this.produtoService.filterByText(ev.target.value);
+  }
+
 }

@@ -39,10 +39,14 @@ export class ProdutosController {
 
   addProducts() {
     for (let product of this.produtos) {
-      //if(product.selecionado){
-this.pedidoService.addProduct(product);
-      //}
+      if((<ProdutoTela> product).selecionado){
+      this.pedidoService.addProduct(product);
+      }
     }
   }
 
+}
+
+class ProdutoTela extends Produto {
+  selecionado: boolean;
 }

@@ -8,7 +8,7 @@ export class PedidoService {
     products: Array<Produto>;
 
     constructor() {
-        
+        this.products = new Array<Produto>();
     }
 
     addProduct(product: Produto){

@@ -10,7 +10,7 @@
   <ion-card>
     <ion-card-header>
       PRODUTOS
-      <button (click)="addProduct()" ion-button round small style="float: right;">
+      <button (click)="addProducts()" ion-button round small style="float: right;">
         <span class="fa fa-fw fa-shopping-basket"></span>
         <span>Adicionar Item(ns)</span>
       </button>
@@ -18,7 +18,7 @@
     <ion-card-content>
       <ion-list>
         <ion-item *ngFor="let produto of produtos" class="card-item-edges">
-            <ion-checkbox [(ngModel)]="produto.selecionado"> </ion-checkbox>
+            <!--<ion-checkbox [(ngModel)]="produto.selecionado"> </ion-checkbox>-->
             <ion-thumbnail item-start>
               <img src="img/geladeira.jpg">
             </ion-thumbnail>

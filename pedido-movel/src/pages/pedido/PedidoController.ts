@@ -1,3 +1,4 @@
+import { PedidoService } from './../../services/PedidoService';
 import { FinalizacaoController } from './../finalizacao/FinalizacaoController';
 import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
@@ -8,12 +9,18 @@ import { Component } from '@angular/core';
 export class PedidoController { 
 
 
- constructor(public navCtrl: NavController) {
-    
+  pedidoService : PedidoService;
+
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService) {
+    this.pedidoService = _pedidoService;
   }
 
   finalizar(){
     this.navCtrl.push(FinalizacaoController)
+  }
+
+  getProdutos(){
+    return this.pedidoService.getProducts();
   }
 
 }

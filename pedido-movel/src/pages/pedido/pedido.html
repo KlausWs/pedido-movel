@@ -5,5 +5,29 @@
 </ion-header>
 
 <ion-content>
+ <ion-card>
+    <ion-card-header>
+      PRODUTOS
+      <button ion-button round small style="float: right;">
+        <span class="fa fa-fw fa-shopping-basket"></span>
+        <span>Adicionar Item(ns)</span>
+      </button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let produto of getProdutos()" class="card-item-edges">
+            <ion-thumbnail item-start>
+              <img src="img/geladeira.jpg">
+            </ion-thumbnail>
+            <h2>{{produto.codigo}}</h2>
+            <p>{{produto.nome}}</p>
+            <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
+            <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
   <button ion-button clear item-end (click)='finalizar()'>Finalizar</button>
+
 </ion-content>

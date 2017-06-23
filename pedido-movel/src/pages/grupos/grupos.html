@@ -13,6 +13,7 @@
   </ion-navbar>
 </ion-header>
 
+
 <ion-content>
   <ion-searchbar (ionInput)="searchByText($event)">
   </ion-searchbar>
@@ -29,7 +30,6 @@
   </ion-card-content>
 </ion-card>
 
-
   <ion-grid>
     <ion-row row>
       <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
@@ -37,9 +37,12 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
-
-
 </ion-content>
+
+<ion-footer style="margin: 0 0 0 0; padding: 0 0 0 0 !important;">
+  <ion-toolbar style="text-align:center; margin: 0 0 0 0; padding: 0 0 0 0 !important;">
+    <button ion-button style="display: inline-block; position: relative; width: 48%; margin: 0 0 0 0; padding: 0 0 0 0 !important;">Full Button</button>
+    <button ion-button style="display: inline-block; position: relative; width: 48%; margin: 0 0 0 0; padding: 0 0 0 0 !important;">Full Button</button>
+  </ion-toolbar>
+</ion-footer>
 

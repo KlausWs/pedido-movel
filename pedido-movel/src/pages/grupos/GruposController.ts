@@ -1,3 +1,4 @@
+import { PedidoController } from './../pedido/PedidoController';
 import { ClienteController } from './../cliente/ClienteController';
 import { Grupo } from './../../entidades/Grupo';
 import { GrupoService } from './../../services/GrupoService';
@@ -15,16 +16,9 @@ export class GruposController {
   listaClientes: ClienteController;
   clientes: ClienteController;
 
-  tab1Root: any = ClienteController;
-  tab2Root: any = ClienteController;
-  mySelectedIndex: number;
-
 
   constructor(public navCtrl: NavController, _grupoService: GrupoService, navParams: NavParams) {
     this.grupoService = _grupoService;
-    if (!navParams.data.tabIndex) {
-      //this.mySelectedIndex = navParams.data.tabIndex || 0;
-    }
   }
 
   searchByGroup(grupo: Grupo) {
@@ -33,6 +27,10 @@ export class GruposController {
 
   searchByText(ev: any) {
     this.navCtrl.push(ProdutosController, { value: ev.target.value });
+  }
+
+  irParaCarrinho(){
+    this.navCtrl.push(PedidoController);
   }
 }
 

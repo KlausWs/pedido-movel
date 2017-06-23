@@ -5,19 +5,24 @@
 </ion-header>
 
 <ion-content>
-    <ion-searchbar (ionInput)="consultarProdutos($event)"></ion-searchbar>
-  <ion-list>
+  <ion-searchbar (ionInput)="consultarProdutos($event)"></ion-searchbar>
 
-    <ion-item *ngFor="let produto of produtos">
-      <ion-thumbnail item-start>
-        <img src="img/geladeira.jpg">
-      </ion-thumbnail>
-      <h2>{{produto.codigo}}</h2>
-      <p>{{produto.nome}}</p>
-      <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
-      <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
-      
-    </ion-item>
-
-  </ion-list>
+  <ion-card>
+    <ion-card-header>
+      PRODUTOS
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let produto of produtos" class="card-item-edges">
+            <ion-thumbnail item-start>
+              <img src="img/geladeira.jpg">
+            </ion-thumbnail>
+            <h2>{{produto.codigo}}</h2>
+            <p>{{produto.nome}}</p>
+            <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
+            <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -25,7 +25,7 @@
       CAMPANHA
     </ion-card-header>
     <ion-card-content>
-      <div style="height: 400px; background-color: #D8D8D8; margin: auto;">
+      <div class="card-campanha-content">
       </div>
     </ion-card-content>
   </ion-card>
@@ -38,7 +38,7 @@
       <ion-grid>
         <ion-row row>
           <ion-col col-lg-3 col-md-4 col-sm-6 col-xs-12 *ngFor="let grupo of grupoService.grupos">
-            <div (click)="searchByGroup(grupo)" style="border:2px solid #D8D8D8; padding: 20px; height:100px;" >
+            <div (click)="searchByGroup(grupo)" class="card-item-edges" >
               <b>{{grupo.nome}}</b>
               <span style="float: right; color:#D8D8D8;">{{grupo.codigo}}</span>
             </div>

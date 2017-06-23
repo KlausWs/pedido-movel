@@ -16,41 +16,34 @@
 
 <ion-content>
 
-  <ion-searchbar (ionInput)="searchByText($event)">
-  </ion-searchbar>
+  <ion-searchbar (ionInput)="searchByText($event)"></ion-searchbar>
 
-  <ion-card  class="card-campanha">
+  <ion-card>
     <ion-card-header>
       CAMPANHA
     </ion-card-header>
     <ion-card-content>
-      <img src="" />
+      <div style="height: 400px; background-color: #D8D8D8; margin: auto;">
+      </div>
     </ion-card-content>
   </ion-card>
 
-  <ion-card >
+  <ion-card>
     <ion-card-header>
       CATEGORIAS
     </ion-card-header>
     <ion-card-content>
-      <ion-grid >
+      <ion-grid>
         <ion-row row>
-          <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
-            <button ion-button clear item-end (click)='searchByGroup(grupo)'>{{grupo.codigo}} - {{grupo.nome}}</button>
+          <ion-col col-lg-3 col-md-4 col-sm-6 col-xs-12 *ngFor="let grupo of grupoService.grupos">
+            <div style="border:2px solid #D8D8D8; padding: 20px; height:100px;">
+              <b>{{grupo.nome}}</b>
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-content>
   </ion-card>
-
-
-  <ion-grid>
-    <ion-row row>
-      <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
-        <button ion-button clear item-end (click)='searchByGroup(grupo)'>{{grupo.codigo}} - {{grupo.nome}}</button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
 </ion-content>
 
@@ -60,5 +53,3 @@
     <button ion-button style="display: inline-block; position: relative; width: 48%; margin: 0 0 0 0; padding: 0 0 0 0 !important;">Full Button</button>
   </ion-toolbar>
 </ion-footer>
-
-

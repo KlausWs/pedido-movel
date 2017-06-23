@@ -14,20 +14,34 @@
 </ion-header>
 
 <ion-content>
+
   <ion-searchbar (ionInput)="searchByText($event)">
   </ion-searchbar>
 
-  <ion-card>
-  <img src="img/nin-live.png"/>
-  <ion-card-content>
-    <ion-card-title>
-      Campanha
-      </ion-card-title>
-    <p>
-      Conteudo de uma campanha promocional.
-    </p>
-  </ion-card-content>
-</ion-card>
+  <ion-card  class="card-campanha">
+    <ion-card-header>
+      CAMPANHA
+    </ion-card-header>
+    <ion-card-content>
+      <img src="" />
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card-categoria">
+    <ion-card-header>
+      CATEGORIAS
+    </ion-card-header>
+    <ion-card-content style="height: 100%;">
+      <ion-grid style="height: 100%;">
+        <ion-row row>
+          <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
+            <button ion-button clear item-end (click)='searchByGroup(grupo)'>{{grupo.codigo}} - {{grupo.nome}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
 
 
   <ion-grid>
@@ -38,8 +52,4 @@
     </ion-row>
   </ion-grid>
 
-
-
-
 </ion-content>
-

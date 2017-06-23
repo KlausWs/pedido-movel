@@ -40,7 +40,7 @@ export class ProdutosController {
   addProducts() {
     for (let product of this.produtos) {
       //if(product.selecionado){
-this.pedidoService.addProduct(product);
+        this.pedidoService.addProduct(product);
       //}
     }
   }

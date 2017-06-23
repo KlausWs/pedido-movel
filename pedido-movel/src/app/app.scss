@@ -50,10 +50,26 @@
     background-color: #FFF !important;
 }
 
+.card-item-produto-edges {
+    border:1px solid #CCCCCC;
+    padding: 20px;
+    height:100px;
+    background-color: #FFF !important;
+    margin-bottom: 10px;
+}
+
 .card-campanha-content {
     height: 400px;
     background-color: #D8D8D8;
     margin: auto;
+}
+
+.barra-divisoria{
+    border-bottom:1px solid #CCCCCC;
+    margin-top: 0px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    margin-left: 2px;
 }
 
 

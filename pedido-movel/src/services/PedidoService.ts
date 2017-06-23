@@ -1,4 +1,3 @@
-import { Grupo } from './../entidades/Grupo';
 import { Injectable } from '@angular/core';
 import { Produto } from '../entidades/Produto';
 
@@ -8,7 +7,7 @@ export class PedidoService {
     products: Array<Produto>;
 
     constructor() {
-        
+        this.products = new Array<Produto>();
     }
 
     addProduct(product: Produto){

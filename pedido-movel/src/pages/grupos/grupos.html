@@ -5,10 +5,12 @@
     </button>
     <div class="logo-default"></div>
     <ion-buttons end>
-      <button (click)="myFunction()" class="basket-text" ion-button>
-        Itens do pedido
+      <button (click)="myFunction()" ion-button>
+        <span class="basket-text">
+          Itens do pedido
+        </span>
+        <span class="fa fa-fw fa-shopping-basket basket"></span>
       </button>
-      <button (click)="myFunction()" class="fa fa-fw fa-shopping-basket basket" ion-button icon-only></button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -19,7 +21,7 @@
   <ion-searchbar (ionInput)="searchByText($event)">
   </ion-searchbar>
 
-  <ion-card  class="card-campanha">
+  <ion-card class="card-campanha">
     <ion-card-header>
       CAMPANHA
     </ion-card-header>
@@ -28,12 +30,12 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card >
+  <ion-card>
     <ion-card-header>
       CATEGORIAS
     </ion-card-header>
     <ion-card-content>
-      <ion-grid >
+      <ion-grid>
         <ion-row row>
           <ion-col col-lg-4 col-md-6 col-sm-12 *ngFor="let grupo of grupoService.grupos">
             <button ion-button clear item-end (click)='searchByGroup(grupo)'>{{grupo.codigo}} - {{grupo.nome}}</button>
@@ -54,11 +56,21 @@
 
 </ion-content>
 
-<ion-footer style="margin: 0 0 0 0; padding: 0 0 0 0 !important;">
-  <ion-toolbar style="text-align:center; margin: 0 0 0 0; padding: 0 0 0 0 !important;">
-    <button ion-button style="display: inline-block; position: relative; width: 48%; margin: 0 0 0 0; padding: 0 0 0 0 !important;">Full Button</button>
-    <button ion-button style="display: inline-block; position: relative; width: 48%; margin: 0 0 0 0; padding: 0 0 0 0 !important;">Full Button</button>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+      <button ion-button style="width: 49%;">
+        <span class="fa fa-fw fa-user-plus basket"></span>
+        <span class="basket-text">
+          Adicionar Cliente
+        </span>
+      </button>
+      <button ion-button style="width: 49%;">
+        <span class="fa fa-fw fa-users basket"></span>
+        <span class="basket-text">
+          Todos os Clientes
+        </span>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
-
-

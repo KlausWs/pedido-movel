@@ -1,3 +1,5 @@
+import { ConsultaClienteController } from './../pages/consultacliente/ConsultaClienteController';
+import { ClienteService } from './../services/ClienteService';
 import { ProdutoService } from './../services/ProdutoService';
 import { PedidoService } from './../services/PedidoService';
 import { GrupoService } from './../services/GrupoService';
@@ -28,7 +30,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetalheProdutoController,
     PedidoController,
     FinalizacaoController,
-    ClienteController
+    ClienteController,
+    ConsultaClienteController
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DetalheProdutoController,
     PedidoController,
     FinalizacaoController,
-    ClienteController
+    ClienteController,
+    ConsultaClienteController
   ],
   providers: [
     StatusBar,
@@ -52,6 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GrupoService,
     PedidoService,
     ProdutoService,
+    ClienteService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

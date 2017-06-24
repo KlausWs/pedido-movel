@@ -1,3 +1,4 @@
+import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
 import { PedidoController } from './../pedido/PedidoController';
 import { ClienteController } from './../cliente/ClienteController';
 import { Grupo } from './../../entidades/Grupo';
@@ -31,6 +32,14 @@ export class GruposController {
 
   irParaCarrinho(){
     this.navCtrl.push(PedidoController);
+  }
+
+  irParaTodosClientes(){
+    this.navCtrl.push(ConsultaClienteController);
+  }
+
+  irParaCadastroClientes(){
+    this.navCtrl.push(ClienteController);
   }
 }
 

@@ -1,3 +1,5 @@
+import { ClienteController } from './../cliente/ClienteController';
+import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
 import { Produto } from './../../entidades/Produto';
 import { PedidoService } from './../../services/PedidoService';
 import { FinalizacaoController } from './../finalizacao/FinalizacaoController';
@@ -18,6 +20,14 @@ export class PedidoController {
 
   finalizar(){
     this.navCtrl.push(FinalizacaoController)
+  }
+
+  irParaTodosClientes(){
+    this.navCtrl.push(ConsultaClienteController);
+  }
+
+  irParaCadastroClientes(){
+    this.navCtrl.push(ClienteController);
   }
 
   getProdutos(){

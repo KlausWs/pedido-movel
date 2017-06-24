@@ -1,3 +1,5 @@
+import { PedidoController } from './../pedido/PedidoController';
+import { Cliente } from './../../entidades/Cliente';
 import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 
@@ -6,14 +8,20 @@ import { Component } from '@angular/core';
 })
 export class ClienteController {
 
+  cliente: Cliente;
 
   constructor(public navCtrl: NavController, public navParam: NavParams) {
     if (navParam) {
-      let cliente = navParam.get('cliente')
-      if (cliente) {
-        {{cliente}}
+      let clienteParam = navParam.get('cliente')
+      if (clienteParam) {
+        this.cliente = clienteParam;
       }
     }
+  }
+
+  
+  irParaCarrinho() {
+    this.navCtrl.push(PedidoController);
   }
 
   cadastrar() {

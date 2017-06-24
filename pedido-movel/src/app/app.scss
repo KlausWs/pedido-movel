@@ -44,6 +44,10 @@
     text-transform: none;
 }
 
+.font-title{
+    font-family: "Open Sans";
+}
+
 .card-item-edges {
     border:1px solid #CCCCCC;
     padding: 20px;
@@ -62,6 +66,11 @@
 .card-campanha-content {
     height: 400px;
     background-color: #D8D8D8;
+    margin: auto;
+}
+
+.card-cadastro-cliente-content {
+    height: 400px;
     margin: auto;
 }
 

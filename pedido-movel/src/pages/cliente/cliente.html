@@ -1,9 +1,61 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Cliente</ion-title>
+    <ion-title class="font-title">Cliente</ion-title>
+    <ion-buttons end>
+      <button (click)="irParaProdutos()" ion-button>
+        <span class="fa fa-fw fa-search buttons-header"></span>
+      </button>
+      <button (click)="irParaCarrinho()" ion-button>
+        <span class="buttons-text">
+          Itens do pedido
+        </span>
+        <span class="fa fa-fw fa-shopping-basket buttons-header"></span>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <button ion-button clear item-end (click)='cadastrar()'>Cadastrar</button>
+  <ion-card>
+    <ion-card-header>
+      CLIENTE
+    </ion-card-header>
+    <ion-card-content>
+      <div class="barra-divisoria"></div>
+      <div class="card-cadastro-cliente-content">
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group required" ng-class="{'has-error' : a('name', sample)}">
+              <label>Nome</label><br>
+              <input class="form-control" ng-model="name" name="name" type="text" required /><br>
+              <span class="help-block" ng-show="a('name', sample)">Você precisa informar o <strong>nome</strong>.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6" style="margin-left: 10px;">
+            <label>Sobrenome</label><br>
+            <input class="form-control" name="sobrenome" type="text" ng-model="sobrenome">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <div class="form-group required" ng-class="{'has-error' : a('name', sample)}">
+              <label>CPF</label><br>
+              <input class="form-control" ng-model="cpf" name="cpf" type="text" required /><br>
+              <span class="help-block" ng-show="a('cpf', sample)">Você precisa informar o <strong>cpf</strong>.</span>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6" style="margin-left: 15px;">
+            <label>Email</label><br>
+            <input class="form-control" name="email" type="email" ng-model="email">
+          </div>
+        </div>
+
+
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>

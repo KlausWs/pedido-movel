@@ -7,5 +7,6 @@ export class Produto {
   quantidade: number; 
   grupo: Grupo;
   imagem: string;
-
+  selecionado: boolean;
+  
 }

@@ -1,3 +1,4 @@
+import { ProdutoService } from './../services/ProdutoService';
 import { PedidoService } from './../services/PedidoService';
 import { GrupoService } from './../services/GrupoService';
 import { ClienteController } from './../pages/cliente/ClienteController';
@@ -50,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     GrupoService,
     PedidoService,
+    ProdutoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,6 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Produtos</ion-title>
+    <ion-buttons end>
+      <button (click)="irParaCarrinho()" ion-button>
+        <span class="buttons-text">
+          Itens do pedido
+        </span>
+        <span class="fa fa-fw fa-shopping-basket buttons-header"></span>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -21,14 +29,15 @@
       <ion-grid>
         <ion-row row *ngFor="let produto of produtos" class="card-item-produto-edges">
           <ion-col col-auto>
-            <input type="checkbox" style="width: 12px;">
+            <input type="checkbox" style="width: 12px;" [(ngModel)]="produto.selecionado">
           </ion-col>
           <ion-col col-auto align-self-center>
             <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
-           <ion-col>
+          <ion-col col-3 style="margin-right: 10px !important;">
             <span class="label-column-list-produtos">Item</span><br>
-            <span class="produto-column-list-produtos">{{produto.nome}}</span>
+            <span class="produto-column-list-produtos">{{getNomeCompacto(produto, 18)}}</span><br>
+            <span class="label-column-list-produtos">{{getNomeCompacto(produto, 45)}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list-produtos">Cod</span><br>
@@ -41,16 +50,36 @@
           <ion-col>
             <span class="label-column-list-produtos">Status</span>
           </ion-col>
-          <ion-col >
+          <ion-col>
             <span class="label-column-list-produtos">Preço</span><br>
             <span class="produto-column-list-produtos">R$ 977,50</span>
           </ion-col>
           <ion-col align-self-center>
-             <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
+            <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
           </ion-col>
         </ion-row>
       </ion-grid>
 
     </ion-card-content>
   </ion-card>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar style="min-height: 60px">
+    <ion-buttons>
+      <button ion-button style="width: 45%;">
+        <span class="fa fa-fw fa-user-plus buttons-footer"></span>
+        <span class="buttons-text">
+          Adicionar Cliente
+        </span>
+      </button>
+      <button ion-button style="width: 45%;">
+        <span class="fa fa-fw fa-users buttons-footer"></span>
+        <span class="buttons-text">
+          Todos os Clientes
+        </span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

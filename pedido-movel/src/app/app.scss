@@ -23,6 +23,7 @@
     background-position: center center;
 }
 
+
 .buttons-header {
     float: right;
     margin: 10px;
@@ -52,7 +53,7 @@
 
 .card-item-produto-edges {
     border:1px solid #CCCCCC;
-    padding: 20px;
+    padding: 5px;
     height:100px;
     background-color: #FFF !important;
     margin-bottom: 10px;
@@ -76,20 +77,36 @@
     background-color: #FFF;
     border-radius: 40px;
     border: 2px solid  #CCCCCC;
-    width: 100px;
-    height: 30px;
+    width: 80px;
+    height: 20px;
     color: black;
-    font-family: Open Sans;
-}
-.ion-item-checkbox{
-   background-color: #FFF !important;
-   margin-right: 0px !important; 
-
-   padding: 0,0,0,0 !important; 
-   width: 50px !important;
+    font-family: "Open Sans";
 }
 
+.label-column-list-produtos{
+    font-size: 12px !important;
+    font-family: "Open Sans";
+    text-align: left;
+    text-transform: none;
+    color: #999999;
+}
 
+.item-column-list-produtos{
+    font-size: 18px !important;
+    font-style: bold;
+    font-family: "Open Sans";
+    text-align: left;
+    color: #333333;
+}
+
+.produto-column-list-produtos{
+    font-size: 16px !important;
+    font-style: bold;
+    font-weight: 700;
+    font-family: "Open Sans";
+    text-align: left;
+    color: black;
+}
 
 
 

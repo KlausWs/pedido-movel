@@ -17,30 +17,39 @@
     </ion-card-header>
     <ion-card-content>
       <div class="barra-divisoria"></div>
-      <ion-list>
-        <ion-item *ngFor="let produto of produtos" class="card-item-produto-edges">
-          <ion-row>
-            <ion-col style="width: 10px !important;">
-              <ion-item class="ion-item-checkbox">
-                <ion-checkbox item-left [(ngModel)]="produto.selecionado" (click)="checkedDone()"></ion-checkbox>
-              </ion-item>
-            </ion-col>
-            <ion-col>
-              <ion-item style="background-color: #FFF !important; text-align: right;">
-                <ion-thumbnail item-start><img src="img/geladeira.jpg"></ion-thumbnail>
-                <p>{{produto.codigo}}</p>
-                <p>{{produto.nome}}</p>
-                <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
-              </ion-item>
-            </ion-col>
-            <ion-col>
-              <ion-item style="background-color: #FFF !important; text-align: right;">
-                <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-item>
-      </ion-list>
+
+      <ion-grid>
+        <ion-row row *ngFor="let produto of produtos" class="card-item-produto-edges">
+          <ion-col col-auto>
+            <input type="checkbox" style="width: 12px;">
+          </ion-col>
+          <ion-col col-auto align-self-center>
+            <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
+          </ion-col>
+           <ion-col>
+            <span class="label-column-list-produtos">Item</span><br>
+            <span class="produto-column-list-produtos">{{produto.nome}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list-produtos">Cod</span><br>
+            <span class="item-column-list-produtos">{{produto.codigo}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list-produtos">Estoque</span><br>
+            <span class="item-column-list-produtos">{{produto.quantidade}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list-produtos">Status</span>
+          </ion-col>
+          <ion-col >
+            <span class="label-column-list-produtos">Preço</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col align-self-center>
+             <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
     </ion-card-content>
   </ion-card>

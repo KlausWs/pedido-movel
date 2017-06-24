@@ -1,4 +1,4 @@
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 export class ClienteController {
 
 
-  constructor(public navCtrl: NavController) {
-
+  constructor(public navCtrl: NavController, public navParam: NavParams) {
+    if (navParam) {
+      let cliente = navParam.get('cliente')
+      if (cliente) {
+        {{cliente}}
+      }
+    }
   }
 
   cadastrar() {

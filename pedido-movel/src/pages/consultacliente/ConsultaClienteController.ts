@@ -1,3 +1,4 @@
+import { ClienteController } from './../cliente/ClienteController';
 import { Cliente } from './../../entidades/Cliente';
 import { PedidoController } from './../pedido/PedidoController';
 import { ClienteService } from './../../services/ClienteService';
@@ -20,6 +21,10 @@ export class ConsultaClienteController {
 
   consultarClientes(ev: any){
     this.clientes = this.clienteService.filterByText(ev.target.value);
+  }
+
+  exibirDetalhes(cliente: Cliente){
+    this.navCtrl.push(ClienteController, { cliente: cliente });
   }
 
   irParaCarrinho(){

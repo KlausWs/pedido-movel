@@ -5,7 +5,7 @@ import { Component, Injectable } from '@angular/core';
 
 @Component({
   templateUrl: "footer.html",
-  selector: "appfooter"
+  selector: "app-footer"
 })
 export class FooterComponent{
 

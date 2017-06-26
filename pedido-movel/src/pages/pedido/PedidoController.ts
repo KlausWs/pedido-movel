@@ -1,6 +1,5 @@
 import { ClienteController } from './../cliente/ClienteController';
 import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
-import { Produto } from './../../entidades/Produto';
 import { PedidoService } from './../../services/PedidoService';
 import { FinalizacaoController } from './../finalizacao/FinalizacaoController';
 import { NavController } from 'ionic-angular';

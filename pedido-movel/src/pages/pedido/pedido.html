@@ -97,14 +97,25 @@
           </ion-col>
           <ion-col>
           </ion-col>
-            <ion-col>
-              <span>Forma de pagamento</span>
-            </ion-col>
-            <ion-col col-2>
-              <span class="produto-column-list-produtos">R$ 977,50</span>
-            </ion-col>
-            <ion-col>
-            </ion-col>
+          <ion-col>
+            <span>Forma de pagamento</span>
+          </ion-col>
+          <ion-col col-2>
+            <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Nah" okText="Okay!">
+              <ion-option value="bacon" selected="true">Bacon</ion-option>
+              <ion-option value="olives">Black Olives</ion-option>
+              <ion-option value="xcheese" selected="true">Extra Cheese</ion-option>
+              <ion-option value="peppers">Green Peppers</ion-option>
+              <ion-option value="mushrooms">Mushrooms</ion-option>
+              <ion-option value="onions">Onions</ion-option>
+              <ion-option value="pepperoni">Pepperoni</ion-option>
+              <ion-option value="pineapple">Pineapple</ion-option>
+              <ion-option value="sausage">Sausage</ion-option>
+              <ion-option value="Spinach">Spinach</ion-option>
+            </ion-select>
+          </ion-col>
+          <ion-col>
+          </ion-col>
         </ion-row>
       </ion-grid>
 

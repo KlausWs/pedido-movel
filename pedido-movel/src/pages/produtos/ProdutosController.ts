@@ -55,6 +55,10 @@ export class ProdutosController {
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);
   }
+
+  alterarSelecaoProduto(produto: ProdutoTela){
+    produto.selecionado = !produto.selecionado;
+  }
 }
 
 class ProdutoTela extends Produto {

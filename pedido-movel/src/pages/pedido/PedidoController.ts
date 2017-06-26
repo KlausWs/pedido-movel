@@ -33,14 +33,5 @@ export class PedidoController {
   getProdutos(){
     return this.pedidoService.getProducts();
   }
-
-
-  getNomeCompacto(produto: Produto, tamanho: number){
-    if (produto.nome.length <= tamanho){
-      return produto.nome;
-    } else {
-      return produto.nome.substring(0,tamanho) + "...";
-    }
-  }
-
+  
 }

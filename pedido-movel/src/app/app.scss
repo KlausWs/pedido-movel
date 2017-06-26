@@ -98,6 +98,11 @@
     text-align: left;
     text-transform: none;
     color: #999999;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width:95% !important;
 }
 
 .item-column-list-produtos{
@@ -115,6 +120,11 @@
     font-family: "Open Sans";
     text-align: left;
     color: black;
+    text-overflow: ellipsis !important;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    width: 95% !important;
 }
 
 .item-column-list-clientes{
@@ -124,3 +134,39 @@
     text-align: left;
     color: #333333;
 }
+
+.col-80px {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 80px;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 80px;
+    -ms-flex: 0 0 80px;
+    flex: 0 0 80px;
+    max-width: 80px; 
+}
+
+.col-22px {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 22px;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 22px;
+    -ms-flex: 0 0 22px;
+    flex: 0 0 22px;
+    max-width: 22px; 
+}
+
+.pedido-subtotal {
+    border:1px solid #CCCCCC;
+    padding: 5px;
+    height:80px;
+    background-color: #FFF !important;
+    margin-bottom: 10px;
+}
+
+.pedido-total {
+    padding: 5px;
+    height:80px;
+    background-color: #E5EAEA !important;
+    margin-bottom: 10px;
+}
+

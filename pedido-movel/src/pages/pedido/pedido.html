@@ -74,13 +74,11 @@
             <span class="label-column-list">à vista</span><br>
             <h1>R$ 977,50</h1>
           </ion-col>
-          <ion-col col-2>
+          <ion-col col-auto>
             <span class="label-column-list">à prazo</span><br>
-            <ion-select [(ngModel)]="condicaoPagamento">
-              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
+            <ion-select class="select-condicao" [(ngModel)]="condicaoSelecionada">
+              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.parcelas}}x R$9999,00</ion-option>
             </ion-select>
-          </ion-col>
-          <ion-col>
           </ion-col>
         </ion-row>
 
@@ -92,12 +90,10 @@
           <ion-col>
             <span>Forma de pagamento</span>
           </ion-col>
-          <ion-col col-2>
-            <ion-select [(ngModel)]="condicaoPagamento">
+          <ion-col col-3>
+            <ion-select [(ngModel)]="condicaoSelecionada">
               <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
             </ion-select>
-          </ion-col>
-          <ion-col>
           </ion-col>
         </ion-row>
       </ion-grid>

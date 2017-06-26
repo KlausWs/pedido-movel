@@ -15,16 +15,13 @@
 
       <ion-grid>
         <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges">
-          <ion-col col-auto>
-            <input type="checkbox" style="width: 12px;">
-          </ion-col>
-          <ion-col col-auto align-self-center>
+          <ion-col class="col-80px" hideWhen="small">
             <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
-          <ion-col col-3 style="margin-right: 10px !important;">
+          <ion-col col-5 col-auto>
             <span class="label-column-list">Item</span><br>
-            <span class="produto-column-list-produtos">{{getNomeCompacto(produto, 18)}}</span><br>
-            <span class="label-column-list-produtos">{{getNomeCompacto(produto, 45)}}</span>
+            <span class="produto-column-list-produtos">{{produto.nome}}</span><br>
+            <span class="label-column-list">{{produto.nome}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Cod</span><br>
@@ -47,8 +44,69 @@
             <input type="checkbox" style="width: 12px;">
           </ion-col>
         </ion-row>
-      </ion-grid>
 
+        <ion-row row class="pedido-subtotal">
+          <ion-col class="col-80px">
+          </ion-col>
+          <ion-col col-auto col-5>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <span>Subtotal</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Preço</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Garantia</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Seguro</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row row class="pedido-total">
+          <ion-col class="col-80px">
+          </ion-col>
+          <ion-col col-auto col-5>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+          <ion-col>
+            <span>Total</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">à vista</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">à prazo</span><br>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+        </ion-row>
+
+        <ion-row row>
+          <ion-col class="col-80px">
+          </ion-col>
+          <ion-col col-auto col-5>
+          </ion-col>
+          <ion-col>
+          </ion-col>
+            <ion-col>
+              <span>Forma de pagamento</span>
+            </ion-col>
+            <ion-col col-2>
+              <span class="produto-column-list-produtos">R$ 977,50</span>
+            </ion-col>
+            <ion-col>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
 
     </ion-card-content>
   </ion-card>
@@ -58,7 +116,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar  style="min-height: 60px">
+  <ion-toolbar style="min-height: 60px">
     <ion-buttons>
       <button ion-button style="width: 45%;" (click)="irParaCadastroClientes()">
         <span class="fa fa-fw fa-user-plus buttons-footer"></span>

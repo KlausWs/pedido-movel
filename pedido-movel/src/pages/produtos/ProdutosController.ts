@@ -55,15 +55,6 @@ export class ProdutosController {
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);
   }
-
-  getNomeCompacto(produto: Produto, tamanho: number) {
-    if (produto.nome.length <= tamanho) {
-      return produto.nome;
-    } else {
-      return produto.nome.substring(0, tamanho) + "...";
-    }
-  }
-
 }
 
 class ProdutoTela extends Produto {

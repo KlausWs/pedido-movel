@@ -1,3 +1,4 @@
+import { CondicaoPagamentoService } from './../services/CondicaoPagamentoService';
 import { FooterComponent } from './../components/footer';
 import { ConsultaClienteController } from './../pages/consultacliente/ConsultaClienteController';
 import { ClienteService } from './../services/ClienteService';
@@ -57,9 +58,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     GrupoService,
-    PedidoService,
+    PedidoService, 
     ProdutoService,
     ClienteService,
+    CondicaoPagamentoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,3 +1,5 @@
+import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
+import { CondicaoPagamentoService } from './../../services/CondicaoPagamentoService';
 import { ClienteController } from './../cliente/ClienteController';
 import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
 import { PedidoService } from './../../services/PedidoService';
@@ -10,11 +12,13 @@ import { Component } from '@angular/core';
 })
 export class PedidoController { 
 
-
   pedidoService : PedidoService;
+  condicaoPagamentoService: CondicaoPagamentoService;
+  condicaoPagamento: CondicaoPagamento;
 
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService) {
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService) {
     this.pedidoService = _pedidoService;
+    this.condicaoPagamentoService = _condicaoPagamentoService;
   }
 
   finalizar(){
@@ -32,5 +36,9 @@ export class PedidoController {
   getProdutos(){
     return this.pedidoService.getProducts();
   }
-  
+
+  getCondicoes(){
+    return this.condicaoPagamentoService.getCondicoes();
+  }
+ 
 }

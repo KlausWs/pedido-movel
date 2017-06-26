@@ -13,19 +13,26 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 $toolbar-background: #009999;
 $toolbar-md-height: 100px;
+$toolbar-ios-height: 100px;
 $toolbar-text-color: #fff;
 
 $background-color: #D8D8D8;
 $card-md-background-color: #fff;
 $card-md-header-color: #008267;
 $card-md-header-margin-bottom: 2px;
+$card-ios-background-color: #fff;
+$card-ios-header-color: #008267;
+$card-ios-header-margin-bottom: 2px;
 
 
 $checkbox-md-icon-border-width: 0px;
 $checkbox-md-icon-background-color-on: #D8D8D8; //mesma cor de fundo para fazer o efeito
 $checkbox-md-icon-size: 12px;
 $checkbox-md-icon-checkmark-color:#697882;
-
+$checkbox-ios-icon-border-width: 0px;
+$checkbox-ios-icon-background-color-on: #D8D8D8; //mesma cor de fundo para fazer o efeito
+$checkbox-ios-icon-size: 12px;
+$checkbox-ios-icon-checkmark-color:#697882;
 
 
 // Named Color Variables

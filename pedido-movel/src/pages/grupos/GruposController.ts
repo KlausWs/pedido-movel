@@ -34,12 +34,5 @@ export class GruposController {
     this.navCtrl.push(PedidoController);
   }
 
-  irParaTodosClientes(){
-    this.navCtrl.push(ConsultaClienteController);
-  }
-
-  irParaCadastroClientes(){
-    this.navCtrl.push(ClienteController);
-  }
 }
 

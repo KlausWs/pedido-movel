@@ -70,11 +70,11 @@
           <ion-col>
             <span>Total</span>
           </ion-col>
-          <ion-col>
+          <ion-col col-2> 
             <span class="label-column-list">à vista</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
+            <h1 class="produto-column-list-produtos">R$ 977,50</h1>
           </ion-col>
-          <ion-col>
+          <ion-col col-2>
             <span class="label-column-list">à prazo</span><br>
             <ion-select [(ngModel)]="condicaoPagamento">
               <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
@@ -109,21 +109,5 @@
 
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar style="min-height: 60px">
-    <ion-buttons>
-      <button ion-button style="width: 45%;" (click)="irParaCadastroClientes()">
-        <span class="fa fa-fw fa-user-plus buttons-footer"></span>
-        <span class="buttons-text">
-          Adicionar Cliente
-        </span>
-      </button>
-      <button ion-button style="width: 45%;" (click)="irParaTodosClientes()">
-        <span class="fa fa-fw fa-users buttons-footer"></span>
-        <span class="buttons-text">
-          Todos os Clientes
-        </span>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+<app-footer>
+</app-footer>

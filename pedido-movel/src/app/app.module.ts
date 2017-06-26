@@ -1,4 +1,5 @@
 import { CondicaoPagamentoService } from './../services/CondicaoPagamentoService';
+import { FooterComponent } from './../components/footer';
 import { ConsultaClienteController } from './../pages/consultacliente/ConsultaClienteController';
 import { ClienteService } from './../services/ClienteService';
 import { ProdutoService } from './../services/ProdutoService';
@@ -32,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PedidoController,
     FinalizacaoController,
     ClienteController,
-    ConsultaClienteController
+    ConsultaClienteController,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PedidoController,
     FinalizacaoController,
     ClienteController,
-    ConsultaClienteController
+    ConsultaClienteController,
+    FooterComponent
   ],
   providers: [
     StatusBar,

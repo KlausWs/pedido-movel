@@ -124,3 +124,22 @@
     text-align: left;
     color: #333333;
 }
+
+.input {
+    display: block;
+    height: 34px;
+    width: 300px;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+.form-label{
+    font-size: 14px !important;
+    font-family: "Open Sans";
+    text-align: left;
+    text-transform: none;
+    color: #333333;
+    line-height: 1.5;
+}

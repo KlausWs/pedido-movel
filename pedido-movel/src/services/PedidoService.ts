@@ -18,4 +18,10 @@ export class PedidoService {
         return this.products;
     }
 
+    getValor(){
+        let total: number = 0;
+        this.products.forEach(produto => total += produto.preco);
+        return total;
+    }
+
 }

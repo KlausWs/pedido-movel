@@ -1,3 +1,4 @@
+import { BrCurrencyPipe } from './../pipes/brCurrency';
 import { CondicaoPagamentoService } from './../services/CondicaoPagamentoService';
 import { FooterComponent } from './../components/footer';
 import { ConsultaClienteController } from './../pages/consultacliente/ConsultaClienteController';
@@ -11,6 +12,7 @@ import { PedidoController } from './../pages/pedido/PedidoController';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {LOCALE_ID} from '@angular/core';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -34,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FinalizacaoController,
     ClienteController,
     ConsultaClienteController,
-    FooterComponent
+    FooterComponent,
+    BrCurrencyPipe
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProdutoService,
     ClienteService,
     CondicaoPagamentoService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: LOCALE_ID, useValue: "pt-BR"}
   ]
 })
 export class AppModule {}

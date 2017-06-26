@@ -1,3 +1,4 @@
+import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
 import { CondicaoPagamentoService } from './../../services/CondicaoPagamentoService';
 import { ClienteController } from './../cliente/ClienteController';
@@ -12,13 +13,15 @@ import { Component } from '@angular/core';
 })
 export class PedidoController { 
 
-  pedidoService : PedidoService;
+  pedidoService: PedidoService;
+  produtoService: ProdutoService;
   condicaoPagamentoService: CondicaoPagamentoService;
   condicaoPagamento: CondicaoPagamento;
 
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService) {
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService) {
     this.pedidoService = _pedidoService;
     this.condicaoPagamentoService = _condicaoPagamentoService;
+    this.produtoService = _produtoService;
   }
 
   finalizar(){
@@ -37,8 +40,23 @@ export class PedidoController {
     return this.pedidoService.getProducts();
   }
 
+  getProdutosComplementares(){
+    return this.produtoService.getProdutosComplementares(this.getProdutos());
+  }
+
   getCondicoes(){
+    this.condicaoPagamentoService.getCondicoes().forEach(condicao => (<CondicaoPagamentoTela>condicao).valorParcela = this.getValor() / condicao.parcelas);
     return this.condicaoPagamentoService.getCondicoes();
   }
- 
+
+  getValor(){
+    return this.pedidoService.getValor();
+  }
+
+}
+
+class CondicaoPagamentoTela extends CondicaoPagamento {
+
+  valorParcela: number;
+
 }

@@ -28,7 +28,7 @@
           </ion-col>
           <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
-            <span class="produto-column-list-produtos">R$ 97799,50</span>
+            <span class="item-column-list-produtos">{{produto.preco | brcurrency}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Garantia</span><br>
@@ -46,19 +46,19 @@
           <ion-col col-4 col-auto >
           </ion-col>
           <ion-col class="col-80px">
-            <span>Subtotal</span>
+            <span class="produto-column-list-produtos">Subtotal</span>
           </ion-col>
           <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
+            <span class="item-column-list-produtos">{{getValor() | brcurrency}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Garantia</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
+            <span class="item-column-list-produtos">R$ 977,50</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Seguro</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
+            <span class="item-column-list-produtos">R$ 977,50</span>
           </ion-col>
         </ion-row>
 
@@ -68,16 +68,16 @@
           <ion-col col-auto col-4>
           </ion-col>
           <ion-col class="col-80px">
-            <span>Total</span>
+            <span class="produto-column-list-produtos">Total</span>
           </ion-col>
           <ion-col col-3> 
             <span class="label-column-list">à vista</span><br>
-            <h1>R$ 977,50</h1>
+            <h1 class="pedido-total-valor">{{getValor() | brcurrency}}</h1>
           </ion-col>
           <ion-col col-auto>
             <span class="label-column-list">à prazo</span><br>
             <ion-select class="select-condicao" [(ngModel)]="condicaoSelecionada">
-              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.parcelas}}x R$9999,00</ion-option>
+              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}</ion-option>
             </ion-select>
           </ion-col>
         </ion-row>
@@ -88,7 +88,7 @@
           <ion-col col-auto col-4>
           </ion-col>
           <ion-col>
-            <span>Forma de pagamento</span>
+            <span class="produto-column-list-produtos">Forma de pagamento</span>
           </ion-col>
           <ion-col col-3>
             <ion-select [(ngModel)]="condicaoSelecionada">
@@ -100,6 +100,47 @@
 
     </ion-card-content>
   </ion-card>
+
+<ion-card>
+    <ion-card-header>
+      COMPRE JUNTO
+      <button (click)="addProducts()" ion-button round small style="float: right;">
+          <span class="fa fa-fw fa-shopping-basket"></span>
+          <span>Adicionar Item(ns)</span>
+      </button>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="barra-divisoria"></div>
+
+      <ion-grid>
+        <ion-row row *ngFor="let produtoComplementar of getProdutosComplementares()" class="card-item-produto-edges" [ngClass]="{'produto-selecionado': produtoComplementar.selecionado}">
+          <ion-col class="col-22px" (click)="alterarSelecaoProduto(produtoComplementar)">
+            <input type="checkbox" [(ngModel)]="produtoComplementar.selecionado">
+          </ion-col>
+          <ion-col class="col-80px" (click)="alterarSelecaoProduto(produtoComplementar)">
+            <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
+          </ion-col>
+          <ion-col col-5 col-auto (click)="alterarSelecaoProduto(produtoComplementar)" align-self-center>
+            <span class="produto-column-list-produtos" style="width: 100%">{{produtoComplementar.nome}}</span><br>
+            <span class="label-column-list">Cod: {{produtoComplementar.codigo}}</span>
+          </ion-col>
+          <ion-col (click)="alterarSelecaoProduto(produtoComplementar)">
+            <span class="label-column-list">Estoque</span><br>
+            <span class="item-column-list-produtos">{{produtoComplementar.quantidade}}</span>
+          </ion-col>
+          <ion-col col-2 (click)="alterarSelecaoProduto(produto)">
+            <span class="label-column-list">Preço</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col align-self-center>
+            <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+
 
   <button ion-button clear item-end (click)='finalizar()'>Finalizar</button>
 

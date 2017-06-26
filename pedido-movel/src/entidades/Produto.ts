@@ -5,6 +5,7 @@ export class Produto {
   nome: string;
   codigo: string
   quantidade: number; 
+  preco: number; 
   grupo: Grupo;
   imagem: string;
   

@@ -24,34 +24,51 @@
       <div class="barra-divisoria"></div>
       <div class="card-cadastro-cliente-content">
 
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="form-group required" ng-class="{'has-error' : a('name', sample)}">
-              <label>Nome</label><br>
-              <input class="form-control" ng-model="name" name="name" type="text" required /><br>
-              <span class="help-block" ng-show="a('name', sample)">Você precisa informar o <strong>nome</strong>.</span>
+        <form #formCliente="ngForm" (ngSubmit)="save(formCliente.value, formCliente.valid)" novalidate>
+
+          <div class="row">
+            <div style="margin-right: 10px !important; min-width: 210px;">
+              <label for="nome" class="form-label !important;">Nome</label>
+              <input class="input" type="text" id="nome" name="nome" [(ngModel)]="cliente.name" #nome="ngModel" required minlength="5">
+              <!--show error only when field is not valid & it's dirty or form submited-->
+              <small [hidden]="nome.valid || (nome.pristine && !formCliente.submitted)"> 
+                  Nome é obrigatório (mínimo 5 caracteres).
+                </small>
+            </div>
+            <div>
+              <label for="sobrenome" class="form-label !important;">Sobrenome</label>
+              <input class="input" type="text" name="sobrenome" [(ngModel)]="cliente.sobrenome" #sobrenome="ngModel" required minlength="5">
+              <small style="color: #c13018" [hidden]="sobrenome.valid || (sobrenome.pristine && !formCliente.submitted)">
+                  Sobrenome é obrigatório (mínimo 5 caracteres).
+                </small>
             </div>
           </div>
-          <div class="col-md-6 col-sm-6" style="margin-left: 10px;">
-            <label>Sobrenome</label><br>
-            <input class="form-control" name="sobrenome" type="text" ng-model="sobrenome">
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <div class="form-group required" ng-class="{'has-error' : a('name', sample)}">
-              <label>CPF</label><br>
-              <input class="form-control" ng-model="cpf" name="cpf" type="text" required /><br>
-              <span class="help-block" ng-show="a('cpf', sample)">Você precisa informar o <strong>cpf</strong>.</span>
+          <div class="row">
+            <div style="margin-right: 10px !important; min-width: 210px;">
+              <label for="cpf" class="form-label !important;">CPF</label>
+              <input class="input" type="text" id="cpf" name="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" required minlength="11">
+              <small [hidden]="cpf.valid || (cpf.pristine && !formCliente.submitted)"> 
+                  CPF é obrigatório (mínimo 13 caracteres).
+                </small>
+            </div>
+            <div>
+              <label for="email" class="form-label !important;">Email</label>
+              <input class="input" type="email" name="email" [(ngModel)]="cliente.email" #email="ngModel">
             </div>
           </div>
-          <div class="col-md-6 col-sm-6" style="margin-left: 15px;">
-            <label>Email</label><br>
-            <input class="form-control" name="email" type="email" ng-model="email">
-          </div>
-        </div>
 
+
+
+          <div>
+            <button type="submit">Adicionar</button>
+            <button type="button">Cancelar</button>
+          </div>
+
+
+
+
+        </form>
 
       </div>
     </ion-card-content>

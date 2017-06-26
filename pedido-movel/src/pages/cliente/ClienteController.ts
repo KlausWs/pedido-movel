@@ -15,11 +15,20 @@ export class ClienteController {
       let clienteParam = navParam.get('cliente')
       if (clienteParam) {
         this.cliente = clienteParam;
+      } else {
+        this.cliente = new Cliente();
       }
     }
   }
 
-  
+
+
+  save(model: Cliente, isValid: boolean) {
+        // check if model is valid
+        // if valid, call API to save customer
+        console.log(model, isValid);
+    }
+
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);
   }

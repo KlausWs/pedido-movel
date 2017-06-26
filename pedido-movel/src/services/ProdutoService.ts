@@ -22,7 +22,7 @@ export class ProdutoService {
 
     initializeProducts() {
         this.produtos = [
-              { imagem: '', nome: 'CABECEIRA HENN 5112 DALIA ESTOFADA (B) NOGU/BEGE REF:5112 (AB)(7188)', codigo: '011845', quantidade: 1.00000, grupo: { imagem: '', nome: 'CABECEIRA', codigo: '0107' } },
+              { imagem: '', nome: 'CABECEIRA HENN 5112 DALIA ESTOFADA (B) NOGU/BEGE REF:5112 (AB)(7188)', codigo: '011845', quantidade: 99999.00000, grupo: { imagem: '', nome: 'CABECEIRA', codigo: '0107' } },
             { imagem: '', nome: 'AUTO RADIO AQUARIUS MP3 3 BLUETOOTH', codigo: '024282', quantidade: 2.00000, grupo: { imagem: '', nome: 'AUTO RADIO', codigo: '0002' } },
             { imagem: '', nome: 'CEL. SAMSUNG GALAXY J7 PRIME DOURADO', codigo: '024828', quantidade: 1.00000, grupo: { imagem: '', nome: 'CELULAR', codigo: '0068' } },
             { imagem: '', nome: 'TELEFONE INTELBRAS TOK FACIL C/IDENT.  REF:TOK FACIL(8920)', codigo: '014018', quantidade: 2.00000, grupo: { imagem: '', nome: 'TELEFONE', codigo: '0078' } },

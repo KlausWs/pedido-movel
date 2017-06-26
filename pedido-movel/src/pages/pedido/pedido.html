@@ -18,22 +18,17 @@
           <ion-col class="col-80px" hideWhen="small">
             <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
-          <ion-col col-5 col-auto>
-            <span class="label-column-list">Item</span><br>
+          <ion-col col-4 col-auto align-self-center>
             <span class="produto-column-list-produtos">{{produto.nome}}</span><br>
-            <span class="label-column-list">{{produto.nome}}</span>
-          </ion-col>
-          <ion-col>
-            <span class="label-column-list">Cod</span><br>
-            <span class="item-column-list-produtos">{{produto.codigo}}</span>
+            <span class="label-column-list">Cod: {{produto.codigo}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Qtde</span><br>
             <span class="item-column-list-produtos">{{produto.quantidade}}</span>
           </ion-col>
-          <ion-col>
+          <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
+            <span class="produto-column-list-produtos">R$ 97799,50</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Garantia</span><br>
@@ -48,14 +43,12 @@
         <ion-row row class="pedido-subtotal">
           <ion-col class="col-80px">
           </ion-col>
-          <ion-col col-auto col-5>
-          </ion-col>
-          <ion-col>
+          <ion-col col-4 col-auto >
           </ion-col>
           <ion-col>
             <span>Subtotal</span>
           </ion-col>
-          <ion-col>
+          <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
             <span class="produto-column-list-produtos">R$ 977,50</span>
           </ion-col>
@@ -72,9 +65,7 @@
         <ion-row row class="pedido-total">
           <ion-col class="col-80px">
           </ion-col>
-          <ion-col col-auto col-5>
-          </ion-col>
-          <ion-col>
+          <ion-col col-auto col-4>
           </ion-col>
           <ion-col>
             <span>Total</span>
@@ -85,6 +76,9 @@
           </ion-col>
           <ion-col>
             <span class="label-column-list">à prazo</span><br>
+            <ion-select [(ngModel)]="condicaoPagamento">
+              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
+            </ion-select>
           </ion-col>
           <ion-col>
           </ion-col>
@@ -93,25 +87,14 @@
         <ion-row row>
           <ion-col class="col-80px">
           </ion-col>
-          <ion-col col-auto col-5>
-          </ion-col>
-          <ion-col>
+          <ion-col col-auto col-4>
           </ion-col>
           <ion-col>
             <span>Forma de pagamento</span>
           </ion-col>
           <ion-col col-2>
-            <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Nah" okText="Okay!">
-              <ion-option value="bacon" selected="true">Bacon</ion-option>
-              <ion-option value="olives">Black Olives</ion-option>
-              <ion-option value="xcheese" selected="true">Extra Cheese</ion-option>
-              <ion-option value="peppers">Green Peppers</ion-option>
-              <ion-option value="mushrooms">Mushrooms</ion-option>
-              <ion-option value="onions">Onions</ion-option>
-              <ion-option value="pepperoni">Pepperoni</ion-option>
-              <ion-option value="pineapple">Pineapple</ion-option>
-              <ion-option value="sausage">Sausage</ion-option>
-              <ion-option value="Spinach">Spinach</ion-option>
+            <ion-select [(ngModel)]="condicaoPagamento">
+              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
             </ion-select>
           </ion-col>
           <ion-col>

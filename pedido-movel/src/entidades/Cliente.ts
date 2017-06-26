@@ -6,5 +6,7 @@ export class Cliente {
   cpf: string;
   email: string; 
   telefone: string;
+  dataNascimento: Date;
+  endereco: string;
 
 }

@@ -24,10 +24,13 @@ export class ClienteController {
 
 
   save(model: Cliente, isValid: boolean) {
-        // check if model is valid
-        // if valid, call API to save customer
-        console.log(model, isValid);
+    if (isValid){
+      if (){
+        
+      }
+      console.log(model, isValid);
     }
+  }
 
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);

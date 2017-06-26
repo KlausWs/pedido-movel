@@ -29,7 +29,7 @@
           <div class="row" style="margin-bottom: 20px !important;">
             <div style="margin-right: 10px !important; min-width: 210px;">
               <label for="nome" class="form-label !important;">Nome</label>
-              <input class="input" type="text" id="nome" name="nome" [(ngModel)]="cliente.name" #nome="ngModel" required minlength="5"
+              <input class="input" type="text" id="nome" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel" required minlength="5"
                 (focus)="focusNome=true" (blur)="focusNome=false" [ngClass]="{'input-focus': ((focusNome && nome.pristine) || (focusNome && !nome.pristine && nome.valid)), 'input-error':  !(nome.valid || (nome.pristine && !formCliente.submitted))}">
               <!--show error only when field is not valid & it's dirty or form submited-->
               <small class="msg-error" [hidden]="nome.valid || (nome.pristine && !formCliente.submitted)"> 
@@ -71,7 +71,7 @@
             </div>
             <div>
               <label for="nascimento" class="form-label !important;">Data de nascimento</label>
-              <input class="input" type="date" id="nascimento" name="nascimento" [(ngModel)]="cliente.dataNascimento" #nascimento="ngModel" (focus)="focusNascimento=true" (blur)="focusNascimento=false"
+              <input class="input" type="text" id="nascimento" name="nascimento" [(ngModel)]="cliente.dataNascimento" #nascimento="ngModel" (focus)="focusNascimento=true" (blur)="focusNascimento=false"
                 [ngClass]="{'input-focus': focusNascimento}">
             </div>
           </div>
@@ -94,7 +94,7 @@
           </div>
 
         </form>
-
+        {{cliente.dataNascimento}}
       </div>
     </ion-card-content>
   </ion-card>

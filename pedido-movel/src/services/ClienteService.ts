@@ -11,10 +11,10 @@ export class ClienteService {
     }
 
     public gravar(cliente: Cliente){
-        if (this.isNovo(cliente)){
-            this.incluir(cliente);
-        } else {
+        if (this.isClienteExistente(cliente)){
             this.alterar(cliente);
+        } else {
+            this.incluir(cliente);
         }
     }
 
@@ -24,11 +24,17 @@ export class ClienteService {
 
     private alterar(cliente: Cliente){
 
-        this.clientes.push(cliente);
+        this.clientes.();
     }
 
-    private isNovo(cliente: Cliente) {
-        return false;
+    private isClienteExistente(cli: Cliente) {
+        return this.clientes.findIndex(cliente => cliente.cpf === cli.cpf);
+//        for(let i=0; i < this.clientes.length; i++ ){
+//            if (this.clientes[i].cpf == cliente.cpf){
+//                return true;
+//            }
+//        }
+//        return false;
     }
 
 

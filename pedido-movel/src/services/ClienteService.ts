@@ -24,7 +24,7 @@ export class ClienteService {
 
     private alterar(cliente: Cliente){
 
-        this.clientes.();
+        //this.clientes.();
     }
 
     private isClienteExistente(cli: Cliente) {

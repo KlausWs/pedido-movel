@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <div class="logo-default"></div>
     <ion-buttons end>
       <button (click)="irParaProdutos()" ion-button>
@@ -25,6 +22,7 @@
       CAMPANHA
     </ion-card-header>
     <ion-card-content>
+      <div class="barra-divisoria"></div>
       <div class="card-campanha-content">
       </div>
     </ion-card-content>
@@ -35,6 +33,7 @@
       CATEGORIAS
     </ion-card-header>
     <ion-card-content>
+      <div class="barra-divisoria"></div>
       <ion-grid>
         <ion-row row>
           <ion-col col-lg-4 col-md-6 col-sm-12 col-xs-12 *ngFor="let grupo of grupoService.grupos">
@@ -53,13 +52,13 @@
 <ion-footer>
   <ion-toolbar  style="min-height: 60px">
     <ion-buttons>
-      <button ion-button style="width: 45%;">
+      <button ion-button style="width: 45%;" (click)="irParaCadastroClientes()">
         <span class="fa fa-fw fa-user-plus buttons-footer"></span>
         <span class="buttons-text">
           Adicionar Cliente
         </span>
       </button>
-      <button ion-button style="width: 45%;">
+      <button ion-button style="width: 45%;" (click)="irParaTodosClientes()">
         <span class="fa fa-fw fa-users buttons-footer"></span>
         <span class="buttons-text">
           Todos os Clientes

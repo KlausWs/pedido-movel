@@ -23,6 +23,7 @@
     background-position: center center;
 }
 
+
 .buttons-header {
     float: right;
     margin: 10px;
@@ -43,11 +44,23 @@
     text-transform: none;
 }
 
+.font-title{
+    font-family: "Open Sans";
+}
+
 .card-item-edges {
     border:1px solid #CCCCCC;
     padding: 20px;
     height:100px;
     background-color: #FFF !important;
+}
+
+.card-item-produto-edges {
+    border:1px solid #CCCCCC;
+    padding: 5px;
+    height:100px;
+    background-color: #FFF !important;
+    margin-bottom: 10px;
 }
 
 .card-campanha-content {
@@ -56,6 +69,58 @@
     margin: auto;
 }
 
+.card-cadastro-cliente-content {
+    height: 400px;
+    margin: auto;
+}
 
+.barra-divisoria{
+    border-bottom:1px solid #CCCCCC;
+    margin-top: 0px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
 
+.button-detail{
+    background-color: #FFF;
+    border-radius: 40px;
+    border: 2px solid  #CCCCCC;
+    width: 80px;
+    height: 20px;
+    color: black;
+    font-family: "Open Sans";
+}
 
+.label-column-list{
+    font-size: 12px !important;
+    font-family: "Open Sans";
+    text-align: left;
+    text-transform: none;
+    color: #999999;
+}
+
+.item-column-list-produtos{
+    font-size: 18px !important;
+    font-style: bold;
+    font-family: "Open Sans";
+    text-align: left;
+    color: #333333;
+}
+
+.produto-column-list-produtos{
+    font-size: 16px !important;
+    font-style: bold;
+    font-weight: 700;
+    font-family: "Open Sans";
+    text-align: left;
+    color: black;
+}
+
+.item-column-list-clientes{
+    font-size: 15px !important;
+    font-style: bold;
+    font-family: "Open Sans";
+    text-align: left;
+    color: #333333;
+}

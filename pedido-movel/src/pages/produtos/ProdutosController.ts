@@ -1,3 +1,4 @@
+import { PedidoController } from './../pedido/PedidoController';
 import { PedidoService } from './../../services/PedidoService';
 import { DetalheProdutoController } from './../detalheproduto/DetalheProdutoController';
 import { Component } from '@angular/core';
@@ -8,7 +9,6 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   templateUrl: 'produtos.html',
-  providers: [ProdutoService]
 })
 
 export class ProdutosController {
@@ -25,6 +25,8 @@ export class ProdutosController {
       let grupo = navParam.get('grupo')
       if (grupo) {
         this.produtos = this.produtoService.filterByGroup(grupo);
+      } else {
+        this.produtos = this.produtoService.produtos;
       }
     }
   }
@@ -39,9 +41,26 @@ export class ProdutosController {
 
   addProducts() {
     for (let product of this.produtos) {
-      if((<ProdutoTela> product).selecionado){
-      this.pedidoService.addProduct(product);
+      if (product.selecionado) {
+        this.pedidoService.addProduct(product);
+        product.selecionado = false;
       }
+    }
+  }
+
+  checkedDone() {
+
+  }
+
+  irParaCarrinho() {
+    this.navCtrl.push(PedidoController);
+  }
+
+  getNomeCompacto(produto: Produto, tamanho: number) {
+    if (produto.nome.length <= tamanho) {
+      return produto.nome;
+    } else {
+      return produto.nome.substring(0, tamanho) + "...";
     }
   }
 

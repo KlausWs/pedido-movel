@@ -1,33 +1,77 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Pedido</ion-title>
+    <ion-title>Finalizar Compra</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
- <ion-card>
+  <ion-card>
     <ion-card-header>
-      PRODUTOS
-      <button ion-button round small style="float: right;">
-        <span class="fa fa-fw fa-shopping-basket"></span>
-        <span>Adicionar Item(ns)</span>
-      </button>
+      PEDIDO
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let produto of getProdutos()" class="card-item-edges">
-            <ion-thumbnail item-start>
-              <img src="img/geladeira.jpg">
-            </ion-thumbnail>
-            <h2>{{produto.codigo}}</h2>
-            <p>{{produto.nome}}</p>
-            <p>{{produto.grupo.codigo}} - {{produto.grupo.nome}} </p>
-            <button ion-button clear item-end (click)='exibirDetalhes()'>Detelhes</button>
-        </ion-item>
-      </ion-list>
+      <div class="barra-divisoria"></div>
+      <span style="margin-left: 5px;">Produtos adicionados </span>
+
+      <ion-grid>
+        <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges">
+          <ion-col col-auto>
+            <input type="checkbox" style="width: 12px;">
+          </ion-col>
+          <ion-col col-auto align-self-center>
+            <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
+          </ion-col>
+          <ion-col col-3 style="margin-right: 10px !important;">
+            <span class="label-column-list">Item</span><br>
+            <span class="produto-column-list-produtos">{{getNomeCompacto(produto, 18)}}</span><br>
+            <span class="label-column-list-produtos">{{getNomeCompacto(produto, 45)}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Cod</span><br>
+            <span class="item-column-list-produtos">{{produto.codigo}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Qtde</span><br>
+            <span class="item-column-list-produtos">{{produto.quantidade}}</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Preço</span><br>
+            <span class="produto-column-list-produtos">R$ 977,50</span>
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Garantia</span><br>
+            <input type="checkbox" style="width: 12px;">
+          </ion-col>
+          <ion-col>
+            <span class="label-column-list">Seguro</span><br>
+            <input type="checkbox" style="width: 12px;">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
     </ion-card-content>
   </ion-card>
 
   <button ion-button clear item-end (click)='finalizar()'>Finalizar</button>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar  style="min-height: 60px">
+    <ion-buttons>
+      <button ion-button style="width: 45%;" (click)="irParaCadastroClientes()">
+        <span class="fa fa-fw fa-user-plus buttons-footer"></span>
+        <span class="buttons-text">
+          Adicionar Cliente
+        </span>
+      </button>
+      <button ion-button style="width: 45%;" (click)="irParaTodosClientes()">
+        <span class="fa fa-fw fa-users buttons-footer"></span>
+        <span class="buttons-text">
+          Todos os Clientes
+        </span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

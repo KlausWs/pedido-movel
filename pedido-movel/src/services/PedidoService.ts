@@ -1,4 +1,3 @@
-import { Grupo } from './../entidades/Grupo';
 import { Injectable } from '@angular/core';
 import { Produto } from '../entidades/Produto';
 

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Todos os clientes</ion-title>
+        <ion-buttons end>
+            <button (click)="irParaCarrinho()" ion-button>
+        <span class="buttons-text">
+          Itens do pedido
+        </span>
+        <span class="fa fa-fw fa-shopping-basket buttons-header"></span>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar (ionInput)="consultarClientes($event)"></ion-searchbar>
+
+    <ion-card>
+        <ion-card-header>
+            CLIENTES
+        </ion-card-header>
+        <ion-card-content>
+            <div class="barra-divisoria"></div>
+
+            <ion-grid>
+                <ion-row row *ngFor="let cliente of clientes" class="card-item-produto-edges">
+                    <ion-col col-3>
+                        <span class="label-column-list">Nome do cliente</span><br>
+                        <span class="produto-column-list-produtos">{{cliente.nome}}</span><br>
+                        <span class="produto-column-list-produtos">{{cliente.sobrenome}}</span>
+                    </ion-col>
+                    <ion-col>
+                        <span class="label-column-list">CPF</span><br>
+                        <span class="item-column-list-clientes">{{cliente.cpf}}</span>
+                    </ion-col>
+                    <ion-col>
+                        <span class="label-column-list">Telefone</span><br>
+                        <span class="item-column-list-clientes">{{cliente.telefone}}</span>
+                    </ion-col>
+                    <ion-col col-3>
+                        <span class="label-column-list">Email</span><br>
+                        <span class="item-column-list-clientes">{{cliente.email}}</span>
+                    </ion-col>
+                    <ion-col col-auto align-self-center>
+                        <button (click)="exibirDetalhes(cliente)" class="button-detail">Detalhes</button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>

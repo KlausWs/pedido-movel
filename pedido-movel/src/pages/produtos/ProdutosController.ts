@@ -41,9 +41,9 @@ export class ProdutosController {
 
   addProducts() {
     for (let product of this.produtos) {
-      if (product.selecionado) {
+      if ((<ProdutoTela>product).selecionado) {
         this.pedidoService.addProduct(product);
-        product.selecionado = false;
+        (<ProdutoTela>product).selecionado = false;
       }
     }
   }

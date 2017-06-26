@@ -1,3 +1,4 @@
+import { ClienteService } from './../../services/ClienteService';
 import { PedidoController } from './../pedido/PedidoController';
 import { Cliente } from './../../entidades/Cliente';
 import { NavController, NavParams } from 'ionic-angular';
@@ -10,7 +11,7 @@ export class ClienteController {
 
   cliente: Cliente;
 
-  constructor(public navCtrl: NavController, public navParam: NavParams) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public clienteService: ClienteService) {
     if (navParam) {
       let clienteParam = navParam.get('cliente')
       if (clienteParam) {
@@ -24,10 +25,12 @@ export class ClienteController {
 
 
   save(model: Cliente, isValid: boolean) {
-        // check if model is valid
-        // if valid, call API to save customer
-        console.log(model, isValid);
+    if (isValid){
+      this.clienteService.gravar(model);
+      console.log(model, isValid);
+      this.navCtrl.pop();    
     }
+  }
 
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);

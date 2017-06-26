@@ -70,7 +70,7 @@
 }
 
 .card-cadastro-cliente-content {
-    height: 400px;
+    height: 450px;
     margin: auto;
 }
 
@@ -170,6 +170,28 @@
     margin-bottom: 10px;
 }
 
+.botao-primario{
+    background-color: #428bca;
+    color: #fff;
+    font-family: "Open Sans";
+    border-radius: 4px;
+    height: 34px;
+    min-width: 80px;
+    width: 150px;
+    padding: 5, 10, 5, 10;
+}
+
+.botao-secundario{
+    background-color: #7892a1;
+    color: #fff;
+    font-family: "Open Sans";
+    border-radius: 4px;
+    height: 34px;
+    min-width: 80px;
+    width: 150px;
+    padding: 5, 10, 5, 10;
+}
+
 .input {
     display: block;
     height: 34px;
@@ -180,8 +202,20 @@
     border-radius: 4px;
 }
 
+.text-area {
+    display: block;
+    width: 610px;
+    padding: 5px 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
 .input-error{
     border: 1px solid #c13018;
+}
+
+.input-focus{
+    border: 1px solid #428bca;
 }
 
 .msg-error{

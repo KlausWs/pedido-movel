@@ -27,30 +27,27 @@
       <div class="barra-divisoria"></div>
 
       <ion-grid>
-        <ion-row row *ngFor="let produto of produtos" class="card-item-produto-edges">
-          <ion-col class="col-22px">
+        <ion-row row *ngFor="let produto of produtos" class="card-item-produto-edges" [ngClass]="{'produto-selecionado': produto.selecionado}">
+          <ion-col class="col-22px" (click)="alterarSelecaoProduto(produto)">
             <input type="checkbox" [(ngModel)]="produto.selecionado">
           </ion-col>
-          <ion-col class="col-80px">
+          <ion-col class="col-80px" (click)="alterarSelecaoProduto(produto)">
             <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
-          <ion-col col-5 col-auto>
+          <ion-col col-4 col-auto (click)="alterarSelecaoProduto(produto)">
             <span class="label-column-list">Item</span><br>
             <span class="produto-column-list-produtos" style="width: 100%">{{produto.nome}}</span><br>
             <span class="label-column-list">{{produto.nome}}</span>
           </ion-col>
-          <ion-col>
+          <ion-col (click)="alterarSelecaoProduto(produto)">
             <span class="label-column-list">Cod</span><br>
             <span class="item-column-list-produtos">{{produto.codigo}}</span>
           </ion-col>
-          <ion-col>
+          <ion-col (click)="alterarSelecaoProduto(produto)">
             <span class="label-column-list">Estoque</span><br>
             <span class="item-column-list-produtos">{{produto.quantidade}}</span>
           </ion-col>
-          <ion-col>
-            <span class="label-column-list">Status</span>
-          </ion-col>
-          <ion-col>
+          <ion-col (click)="alterarSelecaoProduto(produto)">
             <span class="label-column-list">Preço</span><br>
             <span class="produto-column-list-produtos">R$ 977,50</span>
           </ion-col>

@@ -65,7 +65,9 @@
 
 .card-campanha-content {
     height: 400px;
-    background-color: #D8D8D8;
+    background-size: 100% 100%;
+    background-image: url(../assets/img/promocao.png);
+    background-repeat: none;
     margin: auto;
 }
 

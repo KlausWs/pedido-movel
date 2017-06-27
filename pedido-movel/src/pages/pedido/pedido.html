@@ -14,7 +14,7 @@
       <span style="margin-left: 5px;">Produtos adicionados </span>
 
       <ion-grid>
-        <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges">
+        <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges" nowrap>
           <ion-col class="col-80px" hideWhen="small">
             <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
@@ -25,44 +25,45 @@
           <ion-col class="col-80px">
             <span class="label-column-list">Qtde</span><br>
             <span class="item-column-list-produtos">{{produto.quantidade}}</span>
+            <span class="fa fa-fw fa-times" (click)="removerProduto(produto)"></span>
           </ion-col>
           <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
             <span class="item-column-list-produtos">{{produto.preco | brcurrency}}</span>
           </ion-col>
-          <ion-col>
+          <ion-col (click)="alterarSelecaoGarantia(produto)">
             <span class="label-column-list">Garantia</span><br>
-            <input type="checkbox" style="width: 12px;">
+            <input type="checkbox" [(ngModel)]="produto.garantiaSelecionada" style="width: 12px;">
           </ion-col>
-          <ion-col>
+          <ion-col (click)="alterarSelecaoSeguro(produto)">
             <span class="label-column-list">Seguro</span><br>
-            <input type="checkbox" style="width: 12px;">
+            <input type="checkbox" [(ngModel)]="produto.seguroSelecionado" style="width: 12px;">
           </ion-col>
         </ion-row>
 
-        <ion-row row class="pedido-subtotal">
+        <ion-row row class="pedido-subtotal" nowrap>
           <ion-col class="col-80px">
           </ion-col>
-          <ion-col col-4 col-auto >
+          <ion-col col-4 col-auto>
           </ion-col>
           <ion-col class="col-80px">
             <span class="produto-column-list-produtos">Subtotal</span>
           </ion-col>
           <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
-            <span class="item-column-list-produtos">{{getValor() | brcurrency}}</span>
+            <span class="item-column-list-produtos">{{getSubTotal() | brcurrency}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Garantia</span><br>
-            <span class="item-column-list-produtos">R$ 977,50</span>
+            <span class="item-column-list-produtos">{{getTotalGarantia() | brcurrency}}</span>
           </ion-col>
           <ion-col>
             <span class="label-column-list">Seguro</span><br>
-            <span class="item-column-list-produtos">R$ 977,50</span>
+            <span class="item-column-list-produtos">{{getTotalSeguro() | brcurrency}}</span>
           </ion-col>
         </ion-row>
 
-        <ion-row row class="pedido-total">
+        <ion-row row class="pedido-total" nowrap>
           <ion-col class="col-80px">
           </ion-col>
           <ion-col col-auto col-4>
@@ -70,19 +71,19 @@
           <ion-col class="col-80px">
             <span class="produto-column-list-produtos">Total</span>
           </ion-col>
-          <ion-col col-3> 
+          <ion-col col-3>
             <span class="label-column-list">à vista</span><br>
-            <h1 class="pedido-total-valor">{{getValor() | brcurrency}}</h1>
+            <h1 class="pedido-total-valor">{{getTotal() | brcurrency}}</h1>
           </ion-col>
           <ion-col col-auto>
             <span class="label-column-list">à prazo</span><br>
             <ion-select class="select-condicao" [(ngModel)]="condicaoSelecionada">
-              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}</ion-option>
+              <ion-option *ngFor="let condicao of getCondicoes(); let isFirst = first" [value]="condicao" [selected]="isFirst">{{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}</ion-option>
             </ion-select>
           </ion-col>
         </ion-row>
 
-        <ion-row row>
+        <ion-row row nowrap>
           <ion-col class="col-80px">
           </ion-col>
           <ion-col col-auto col-4>
@@ -91,57 +92,24 @@
             <span class="produto-column-list-produtos">Forma de pagamento</span>
           </ion-col>
           <ion-col col-3>
-            <ion-select [(ngModel)]="condicaoSelecionada">
-              <ion-option *ngFor="let condicao of getCondicoes()" [value]="condicao">{{condicao.descricao}}</ion-option>
-            </ion-select>
+
           </ion-col>
         </ion-row>
       </ion-grid>
 
-    </ion-card-content>
-  </ion-card>
-
-<ion-card>
-    <ion-card-header>
-      COMPRE JUNTO
-      <button (click)="addProducts()" ion-button round small style="float: right;">
-          <span class="fa fa-fw fa-shopping-basket"></span>
-          <span>Adicionar Item(ns)</span>
-      </button>
-    </ion-card-header>
-    <ion-card-content>
-      <div class="barra-divisoria"></div>
-
-      <ion-grid>
-        <ion-row row *ngFor="let produtoComplementar of getProdutosComplementares()" class="card-item-produto-edges" [ngClass]="{'produto-selecionado': produtoComplementar.selecionado}">
-          <ion-col class="col-22px" (click)="alterarSelecaoProduto(produtoComplementar)">
-            <input type="checkbox" [(ngModel)]="produtoComplementar.selecionado">
-          </ion-col>
-          <ion-col class="col-80px" (click)="alterarSelecaoProduto(produtoComplementar)">
-            <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
-          </ion-col>
-          <ion-col col-5 col-auto (click)="alterarSelecaoProduto(produtoComplementar)" align-self-center>
-            <span class="produto-column-list-produtos" style="width: 100%">{{produtoComplementar.nome}}</span><br>
-            <span class="label-column-list">Cod: {{produtoComplementar.codigo}}</span>
-          </ion-col>
-          <ion-col (click)="alterarSelecaoProduto(produtoComplementar)">
-            <span class="label-column-list">Estoque</span><br>
-            <span class="item-column-list-produtos">{{produtoComplementar.quantidade}}</span>
-          </ion-col>
-          <ion-col col-2 (click)="alterarSelecaoProduto(produto)">
-            <span class="label-column-list">Preço</span><br>
-            <span class="produto-column-list-produtos">R$ 977,50</span>
-          </ion-col>
-          <ion-col align-self-center>
-            <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <div style="margin-top: 50px;">
+        <div style="display: inline-block; margin-right: 10px;">
+          <button ion-button color="gray">Continuar comprando</button>
+        </div>
+        <div style="display: inline-block;">
+          <button ion-button color="blue">Finalizar compra</button>
+        </div>
+      </div>
 
     </ion-card-content>
   </ion-card>
 
-
+  <product-list cardTitle="COMPRE JUNTO" [products]="getProdutosComplementares()"></product-list>
   <button ion-button clear item-end (click)='finalizar()'>Finalizar</button>
 
 </ion-content>

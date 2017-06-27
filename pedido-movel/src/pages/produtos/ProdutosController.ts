@@ -15,11 +15,9 @@ export class ProdutosController {
 
   produtoService: ProdutoService;
   produtos: Array<Produto>;
-  pedidoService: PedidoService;
 
   constructor(private _produtoService: ProdutoService, public navCtrl: NavController, public navParam: NavParams, private _pedidoService: PedidoService) {
     this.produtoService = _produtoService;
-    this.pedidoService = _pedidoService;
 
     if (navParam) {
       let grupo = navParam.get('grupo')
@@ -31,36 +29,12 @@ export class ProdutosController {
     }
   }
 
-  exibirDetalhes() {
-    this.navCtrl.push(DetalheProdutoController);
-  }
-
   consultarProdutos(ev: any) {
     this.produtos = this.produtoService.filterByText(ev.target.value);
-  }
-
-  addProducts() {
-    for (let product of this.produtos) {
-      if ((<ProdutoTela>product).selecionado) {
-        this.pedidoService.addProduct(product);
-        (<ProdutoTela>product).selecionado = false;
-      }
-    }
-  }
-
-  checkedDone() {
-
   }
 
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);
   }
 
-  alterarSelecaoProduto(produto: ProdutoTela){
-    produto.selecionado = !produto.selecionado;
-  }
-}
-
-class ProdutoTela extends Produto {
-  selecionado: boolean;
 }

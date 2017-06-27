@@ -1,3 +1,4 @@
+import { ProductListComponent } from './../components/productList';
 import { BrCurrencyPipe } from './../pipes/brCurrency';
 import { CondicaoPagamentoService } from './../services/CondicaoPagamentoService';
 import { FooterComponent } from './../components/footer';
@@ -37,11 +38,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ClienteController,
     ConsultaClienteController,
     FooterComponent,
-    BrCurrencyPipe
+    BrCurrencyPipe,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,7 +57,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FinalizacaoController,
     ClienteController,
     ConsultaClienteController,
-    FooterComponent
+    FooterComponent,
+    ProductListComponent
   ],
   providers: [
     StatusBar,

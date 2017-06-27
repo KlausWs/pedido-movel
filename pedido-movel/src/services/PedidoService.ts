@@ -10,18 +10,56 @@ export class PedidoService {
         this.products = new Array<Produto>();
     }
 
-    addProduct(product: Produto){
+    addProduct(product: Produto) {
+        (<ProdutoUtilizado>product).quantidadeSelecionada = product.quantidade;
         this.products.push(product);
     }
 
-    getProducts(){
+    removeProduct(product: Produto) {
+        let idx: number = this.products.indexOf(product);
+        this.products.splice(idx, 1);
+    }
+
+    getProducts() {
         return this.products;
     }
 
-    getValor(){
-        let total: number = 0;
-        this.products.forEach(produto => total += produto.preco);
-        return total;
+    getSubTotal() {
+        let subTotal: number = 0;
+        this.products.forEach(produto => subTotal += produto.preco * (<ProdutoUtilizado>produto).quantidadeSelecionada);
+        return subTotal;
     }
+
+    getTotalGarantia() {
+        let totalGarantia: number = 0;
+        this.products.forEach(produto => {
+            if ((<ProdutoUtilizado>produto).garantiaSelecionada) {
+                totalGarantia += produto.precoGarantia * (<ProdutoUtilizado>produto).quantidadeSelecionada
+            }
+        });
+        return totalGarantia;
+    }
+
+    getTotalSeguro() {
+        let totalSeguro: number = 0;
+        this.products.forEach(produto => {
+            if ((<ProdutoUtilizado>produto).seguroSelecionado) {
+                totalSeguro += produto.precoSeguro * (<ProdutoUtilizado>produto).quantidadeSelecionada
+            }
+        });
+        return totalSeguro;
+    }
+
+    getTotal() {
+        return this.getSubTotal() + this.getTotalGarantia() + this.getTotalSeguro();
+    }
+
+}
+
+export class ProdutoUtilizado extends Produto {
+
+    quantidadeSelecionada: number;
+    garantiaSelecionada: boolean;
+    seguroSelecionado: boolean;
 
 }

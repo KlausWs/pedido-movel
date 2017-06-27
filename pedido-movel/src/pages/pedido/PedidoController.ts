@@ -1,9 +1,10 @@
+import { Produto } from './../../entidades/Produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
 import { CondicaoPagamentoService } from './../../services/CondicaoPagamentoService';
 import { ClienteController } from './../cliente/ClienteController';
 import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
-import { PedidoService } from './../../services/PedidoService';
+import { PedidoService, ProdutoUtilizado } from './../../services/PedidoService';
 import { FinalizacaoController } from './../finalizacao/FinalizacaoController';
 import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
@@ -11,7 +12,7 @@ import { Component } from '@angular/core';
 @Component({
   templateUrl: 'pedido.html',
 })
-export class PedidoController { 
+export class PedidoController {
 
   pedidoService: PedidoService;
   produtoService: ProdutoService;
@@ -24,33 +25,57 @@ export class PedidoController {
     this.produtoService = _produtoService;
   }
 
-  finalizar(){
+  finalizar() {
     this.navCtrl.push(FinalizacaoController)
   }
 
-  irParaTodosClientes(){
+  irParaTodosClientes() {
     this.navCtrl.push(ConsultaClienteController);
   }
 
-  irParaCadastroClientes(){
+  irParaCadastroClientes() {
     this.navCtrl.push(ClienteController);
   }
 
-  getProdutos(){
+  getProdutos() {
     return this.pedidoService.getProducts();
   }
 
-  getProdutosComplementares(){
+  getProdutosComplementares() {
     return this.produtoService.getProdutosComplementares(this.getProdutos());
   }
 
-  getCondicoes(){
-    this.condicaoPagamentoService.getCondicoes().forEach(condicao => (<CondicaoPagamentoTela>condicao).valorParcela = this.getValor() / condicao.parcelas);
+  getCondicoes() {
+    this.condicaoPagamentoService.getCondicoes().forEach(condicao => (<CondicaoPagamentoTela>condicao).valorParcela = this.getTotal() / condicao.parcelas);
     return this.condicaoPagamentoService.getCondicoes();
   }
 
-  getValor(){
-    return this.pedidoService.getValor();
+  getTotal() {
+    return this.pedidoService.getTotal();
+  }
+
+  getSubTotal() {
+    return this.pedidoService.getSubTotal();
+  }
+
+  getTotalGarantia() {
+    return this.pedidoService.getTotalGarantia();
+  }
+
+  getTotalSeguro() {
+    return this.pedidoService.getTotalSeguro();
+  }
+
+  alterarSelecaoGarantia(produto: ProdutoUtilizado) {
+    produto.garantiaSelecionada = !produto.garantiaSelecionada;
+  }
+
+  alterarSelecaoSeguro(produto: ProdutoUtilizado) {
+    produto.seguroSelecionado = !produto.seguroSelecionado;
+  }
+
+  removerProduto(produto: Produto) {
+    this.pedidoService.removeProduct(produto);
   }
 
 }

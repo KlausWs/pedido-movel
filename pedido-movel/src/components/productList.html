@@ -1,0 +1,39 @@
+<ion-card>
+    <ion-card-header>
+      {{cardTitle}}
+      <button (click)="addProducts()" ion-button round small style="float: right;">
+          <span class="fa fa-fw fa-shopping-basket"></span>
+          <span>Adicionar Item(ns)</span>
+      </button>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="barra-divisoria"></div>
+
+      <ion-grid>
+        <ion-row row *ngFor="let product of products" class="card-item-produto-edges" [ngClass]="{'produto-selecionado': product.selecionado}" nowrap>
+          <ion-col class="col-22px" (click)="alterarSelecaoProduto(product)">
+            <input type="checkbox" [(ngModel)]="product.selecionado">
+          </ion-col>
+          <ion-col class="col-80px" (click)="alterarSelecaoProduto(product)">
+            <img src="/assets/img/geladeira.png" style="width: 70px; height: 70px;">
+          </ion-col>
+          <ion-col col-5 col-auto (click)="alterarSelecaoProduto(product)" align-self-center>
+            <span class="produto-column-list-produtos" style="width: 100%">{{product.nome}}</span><br>
+            <span class="label-column-list">Cod: {{product.codigo}}</span>
+          </ion-col>
+          <ion-col (click)="alterarSelecaoProduto(product)">
+            <span class="label-column-list">Estoque</span><br>
+            <span class="item-column-list-produtos">{{product.quantidade}}</span>
+          </ion-col>
+          <ion-col col-2 (click)="alterarSelecaoProduto(product)">
+            <span class="label-column-list">Preço</span><br>
+            <span class="produto-column-list-produtos">{{product.preco | brcurrency}}</span>
+          </ion-col>
+          <ion-col align-self-center>
+            <button (click)="exibirDetalhes()" class="button-detail">Detalhes</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>

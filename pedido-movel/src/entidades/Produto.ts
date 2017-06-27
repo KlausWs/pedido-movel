@@ -6,6 +6,8 @@ export class Produto {
   codigo: string
   quantidade: number; 
   preco: number; 
+  precoGarantia: number; 
+  precoSeguro: number; 
   grupo: Grupo;
   imagem: string;
   

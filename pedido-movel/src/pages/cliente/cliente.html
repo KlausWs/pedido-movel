@@ -24,76 +24,77 @@
       <div class="barra-divisoria"></div>
       <div class="card-cadastro-cliente-content">
 
-        <form #formCliente="ngForm" (ngSubmit)="save(formCliente.value, formCliente.valid)" novalidate>
+          <form #formCliente="ngForm" novalidate>
 
-          <div class="row" style="margin-bottom: 20px !important;">
-            <div style="margin-right: 10px !important; min-width: 210px;">
-              <label for="nome" class="form-label !important;">Nome</label>
-              <input class="input" type="text" id="nome" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel" required minlength="5"
-                (focus)="focusNome=true" (blur)="focusNome=false" [ngClass]="{'input-focus': ((focusNome && nome.pristine) || (focusNome && !nome.pristine && nome.valid)), 'input-error':  !(nome.valid || (nome.pristine && !formCliente.submitted))}">
-              <!--show error only when field is not valid & it's dirty or form submited-->
-              <small class="msg-error" [hidden]="nome.valid || (nome.pristine && !formCliente.submitted)"> 
+            <div class="row" style="margin-bottom: 20px !important;">
+              <div style="margin-right: 10px !important; min-width: 210px;">
+                <label for="nome" class="form-label !important;">Nome</label>
+                <input class="input" type="text" id="nome" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel" required minlength="5"
+                  (focus)="focusNome=true" (blur)="focusNome=false" [ngClass]="{'input-focus': ((focusNome && nome.pristine) || (focusNome && !nome.pristine && nome.valid)), 'input-error':  !(nome.valid || (nome.pristine && !formCliente.submitted))}">
+                <!--show error only when field is not valid & it's dirty or form submited-->
+                <small class="msg-error" [hidden]="nome.valid || (nome.pristine && !formCliente.submitted)"> 
                   <strong>Nome</strong> é obrigatório (mínimo 5 caracteres).
                 </small>
-            </div>
-            <div>
-              <label for="sobrenome" class="form-label !important;">Sobrenome</label>
-              <input class="input" type="text" name="sobrenome" [(ngModel)]="cliente.sobrenome" #sobrenome="ngModel" required minlength="5"
-                (focus)="focusSobrenome=true" (blur)="focusSobrenome=false" [ngClass]="{'input-focus': ((focusSobrenome && sobrenome.pristine) || (focusSobrenome && !sobrenome.pristine && sobrenome.valid)), 'input-error':  !(sobrenome.valid || (sobrenome.pristine && !formCliente.submitted))}">
-              <small class="msg-error" [hidden]="sobrenome.valid || (sobrenome.pristine && !formCliente.submitted)">
+              </div>
+              <div>
+                <label for="sobrenome" class="form-label !important;">Sobrenome</label>
+                <input class="input" type="text" name="sobrenome" [(ngModel)]="cliente.sobrenome" #sobrenome="ngModel" required minlength="5"
+                  (focus)="focusSobrenome=true" (blur)="focusSobrenome=false" [ngClass]="{'input-focus': ((focusSobrenome && sobrenome.pristine) || (focusSobrenome && !sobrenome.pristine && sobrenome.valid)), 'input-error':  !(sobrenome.valid || (sobrenome.pristine && !formCliente.submitted))}">
+                <small class="msg-error" [hidden]="sobrenome.valid || (sobrenome.pristine && !formCliente.submitted)">
                   <strong>Sobrenome</strong> é obrigatório (mínimo 5 caracteres).
                 </small>
+              </div>
             </div>
-          </div>
 
-          <div class="row" style="margin-bottom: 20px !important;">
-            <div style="margin-right: 10px !important; min-width: 210px;">
-              <label for="cpf" class="form-label !important;">CPF</label>
-              <input class="input" type="text" id="cpf" name="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" required minlength="11" (focus)="focusCpf=true"
-                (blur)="focusCpf=false" [ngClass]="{'input-focus': ((focusCpf && cpf.pristine) || (focusCpf && !cpf.pristine && cpf.valid)), 'input-error':  !(cpf.valid || (cpf.pristine && !formCliente.submitted))}">
-              <small class="msg-error" [hidden]="cpf.valid || (cpf.pristine && !formCliente.submitted)"> 
+            <div class="row" style="margin-bottom: 20px !important;">
+              <div style="margin-right: 10px !important; min-width: 210px;">
+                <label for="cpf" class="form-label !important;">CPF</label>
+                <input class="input" type="text" id="cpf" name="cpf" [(ngModel)]="cliente.cpf" #cpf="ngModel" required minlength="11" (focus)="focusCpf=true"
+                  (blur)="focusCpf=false" [ngClass]="{'input-focus': ((focusCpf && cpf.pristine) || (focusCpf && !cpf.pristine && cpf.valid)), 'input-error':  !(cpf.valid || (cpf.pristine && !formCliente.submitted))}">
+                <small class="msg-error" [hidden]="cpf.valid || (cpf.pristine && !formCliente.submitted)"> 
                   <strong>CPF</strong> é obrigatório (mínimo 13 caracteres).
                 </small>
+              </div>
+              <div>
+                <label for="email" class="form-label !important;">Email</label>
+                <input class="input" type="email" name="email" [(ngModel)]="cliente.email" #email="ngModel" (focus)="focusEmail=true" (blur)="focusEmail=false"
+                  [ngClass]="{'input-focus': focusEmail}">
+              </div>
             </div>
-            <div>
-              <label for="email" class="form-label !important;">Email</label>
-              <input class="input" type="email" name="email" [(ngModel)]="cliente.email" #email="ngModel" (focus)="focusEmail=true" (blur)="focusEmail=false"
-                [ngClass]="{'input-focus': focusEmail}">
-            </div>
-          </div>
 
-          <div class="row" style="margin-bottom: 20px !important;"> 
-            <div style="margin-right: 10px !important; min-width: 210px;">
-              <label for="telefone" class="form-label !important;">Telefone</label>
-              <input class="input" type="text" id="telefone" name="telefone" [(ngModel)]="cliente.telefone" #telefone="ngModel" (focus)="focusTelefone=true"
-                (blur)="focusTelefone=false" 
-                [ngClass]="{'input-focus': focusTelefone}">
-            </div>
-            <div>
-              <label for="nascimento" class="form-label !important;">Data de nascimento</label>
-              <input class="input" type="text" id="nascimento" name="nascimento" [(ngModel)]="cliente.dataNascimento" #nascimento="ngModel" (focus)="focusNascimento=true" (blur)="focusNascimento=false"
-                [ngClass]="{'input-focus': focusNascimento}">
-            </div>
-          </div>
+            <div class="row" style="margin-bottom: 20px !important;">
+              <div style="margin-right: 10px !important; min-width: 210px;">
+                <label for="telefone" class="form-label !important;">Telefone</label>
+                <input class="input" type="text" id="telefone" name="telefone" [(ngModel)]="cliente.telefone" #telefone="ngModel" (focus)="focusTelefone=true"
+                  (blur)="focusTelefone=false" [ngClass]="{'input-focus': focusTelefone}">
+              </div>
+              <div>
+                <label for="nascimento" class="form-label !important;">Data de nascimento</label>
+                <input class="input" type="date" id="nascimento" name="nascimento" [ngModel]="cliente.dataNascimento" #nascimento="ngModel"
+                  (focus)="focusNascimento=true" (blur)="focusNascimento=false" [ngClass]="{'input-focus': focusNascimento}">
 
-          <div class="row">
-            <div style="margin-right: 10px !important; min-width: 210px;">
-              <label for="endereco" class="form-label !important;">Endereco</label>
-              <textarea rows="3" class="text-area" id="endereco" name="endereco" [(ngModel)]="cliente.endereco" #endereco="ngModel" (focus)="focusEndereco=true"
-                (blur)="focusEndereco=false" [ngClass]="{'input-focus': focusEndereco}"></textarea>
-            </div>
-          </div>
 
-          <div style="margin-top: 50px;">
-            <div style="display: inline-block; margin-right: 10px;">
-              <button class="botao-primario" type="submit">Salvar</button>
+              </div>
             </div>
-            <div style="display: inline-block;">
-              <button class="botao-secundario" type="button">Cancelar</button>
-            </div>
-          </div>
 
-        </form>
+            <div class="row">
+              <div style="margin-right: 10px !important; min-width: 210px;">
+                <label for="endereco" class="form-label !important;">Endereco</label>
+                <textarea rows="3" class="text-area" id="endereco" name="endereco" [(ngModel)]="cliente.endereco" #endereco="ngModel" (focus)="focusEndereco=true"
+                  (blur)="focusEndereco=false" [ngClass]="{'input-focus': focusEndereco}"></textarea>
+              </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+              <div style="display: inline-block; margin-right: 10px;">
+                <button class="botao-primario" (click)="salvar(formCliente.value, formCliente.valid)">Salvar</button>
+              </div>
+              <div style="display: inline-block;">
+                <button class="botao-secundario" type="reset" (click)="cancelar()">Cancelar</button>
+              </div>
+            </div>
+          </form>
+
         {{cliente.dataNascimento}}
       </div>
     </ion-card-content>

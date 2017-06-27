@@ -22,15 +22,17 @@ export class ClienteController {
     }
   }
 
-
-
-  save(model: Cliente, isValid: boolean) {
-    if (isValid){
+  salvar(model: Cliente, isValid: boolean) {
+    if (isValid) {
       this.clienteService.gravar(model);
-      console.log(model, isValid);
-      this.navCtrl.pop();    
+      this.navCtrl.pop();
     }
   }
+
+  cancelar() {
+    this.navCtrl.pop();
+  }
+
 
   irParaCarrinho() {
     this.navCtrl.push(PedidoController);
@@ -39,6 +41,4 @@ export class ClienteController {
   cadastrar() {
     this.navCtrl.pop();
   }
-
-
 }

@@ -14,7 +14,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import {LOCALE_ID} from '@angular/core';
 
-import { MyApp } from './app.component';
+import { SeniorStoreTool } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ProdutosController } from '../pages/produtos/ProdutosController';
@@ -26,7 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-    MyApp,
+    SeniorStoreTool,
     HomePage,
     ListPage,
     ProdutosController,
@@ -41,11 +41,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(SeniorStoreTool),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    SeniorStoreTool,
     HomePage,
     ListPage,
     ProdutosController,

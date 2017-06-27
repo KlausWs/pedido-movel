@@ -13,7 +13,7 @@ import { GruposController } from '../pages/grupos/GruposController';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {
+export class SeniorStoreTool {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = GruposController;

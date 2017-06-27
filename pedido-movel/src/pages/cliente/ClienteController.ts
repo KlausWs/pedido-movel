@@ -23,6 +23,7 @@ export class ClienteController {
   }
 
   salvar(model: Cliente, isValid: boolean) {
+    console.log(model);
     if (isValid) {
       this.clienteService.gravar(model);
       this.navCtrl.pop();

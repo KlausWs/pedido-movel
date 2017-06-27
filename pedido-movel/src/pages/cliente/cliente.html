@@ -69,8 +69,8 @@
                   (blur)="focusTelefone=false" [ngClass]="{'input-focus': focusTelefone}">
               </div>
               <div>
-                <label for="nascimento" class="form-label !important;">Data de nascimento</label>
-                <input class="input" type="date" id="nascimento" name="nascimento" [ngModel]="cliente.dataNascimento" #nascimento="ngModel"
+                <label for="dataNascimento" class="form-label !important;">Data de nascimento</label>
+                <input class="input" type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="cliente.dataNascimento" useValueAsDate #dataNascimento="ngModel"
                   (focus)="focusNascimento=true" (blur)="focusNascimento=false" [ngClass]="{'input-focus': focusNascimento}">
 
 
@@ -90,12 +90,10 @@
                 <button class="botao-primario" (click)="salvar(formCliente.value, formCliente.valid)">Salvar</button>
               </div>
               <div style="display: inline-block;">
-                <button class="botao-secundario" type="reset" (click)="cancelar()">Cancelar</button>
+                <button class="botao-secundario" type="button" (click)="cancelar()">Cancelar</button>
               </div>
             </div>
           </form>
-
-        {{cliente.dataNascimento}}
       </div>
     </ion-card-content>
   </ion-card>

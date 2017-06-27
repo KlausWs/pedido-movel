@@ -1,3 +1,4 @@
+import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { BrCurrencyPipe } from './../pipes/brCurrency';
 import { CondicaoPagamentoService } from './../services/CondicaoPagamentoService';
 import { FooterComponent } from './../components/footer';
@@ -41,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    DateValueAccessorModule,
     IonicModule.forRoot(SeniorStoreTool),
   ],
   bootstrap: [IonicApp],

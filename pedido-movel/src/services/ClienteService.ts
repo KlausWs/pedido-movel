@@ -33,7 +33,7 @@ export class ClienteService {
 
     private initializeClients() {
         this.clientes = [
-            { nome: 'Daniara', sobrenome: 'Maciel Rodrigues', cpf: '71284972186', codigo: '54532', email: 'JPMAQUINA@LIVE.COM', endereco: 'Rua das Missões, Ponta Aguda, Blumenau', dataNascimento: '15/05/2017', telefone: '4888059880' },
+            { nome: 'Daniara', sobrenome: 'Maciel Rodrigues', cpf: '71284972186', codigo: '54532', email: 'JPMAQUINA@LIVE.COM', endereco: 'Rua das Missões, Ponta Aguda, Blumenau', dataNascimento: new Date(), telefone: '4888059880' },
             { nome: 'Jucelia', sobrenome: 'Rosso Canteli', cpf: '87676679109', codigo: '43577', email: 'JUCELIAJM@GMAIL.COM', endereco: '', dataNascimento: null, telefone: '4899942011' },
             { nome: 'VALDECIR', sobrenome: 'HIPOLITO DOS SANTOS', cpf: '53135856224', codigo: '161636', email: 'VALDECIR_VHS@HOTMAIL.COM', endereco: '', dataNascimento: null, telefone: '4896472013' },
             { nome: 'LUANA', sobrenome: 'AGUIAR SARTOR', cpf: '22744152420', codigo: '9048', email: 'ATENDIMENTO01@CONSORCIOCARLESSI.COM.BR', endereco: '', dataNascimento: null, telefone: '4899950575' },

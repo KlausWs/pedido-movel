@@ -11,8 +11,9 @@ export class PedidoService {
     }
 
     addProduct(product: Produto) {
-        (<ProdutoUtilizado>product).quantidadeSelecionada = product.quantidade;
-        this.products.push(product);
+        let productClone: Produto = Object.create(product);
+        (<ProdutoUtilizado> productClone).quantidadeSelecionada = 1;
+        this.products.push(productClone);
     }
 
     removeProduct(product: Produto) {

@@ -1,6 +1,5 @@
 import { PedidoController } from './../pedido/PedidoController';
 import { PedidoService } from './../../services/PedidoService';
-import { DetalheProdutoController } from './../detalheproduto/DetalheProdutoController';
 import { Component } from '@angular/core';
 import { ProdutoService } from '../../services/ProdutoService';
 import { Produto } from '../../entidades/Produto';

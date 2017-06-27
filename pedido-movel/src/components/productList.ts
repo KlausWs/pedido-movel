@@ -3,7 +3,7 @@ import { ProdutoService } from './../services/ProdutoService';
 import { PedidoService } from './../services/PedidoService';
 import { DetalheProdutoController } from './../pages/detalheproduto/DetalheProdutoController';
 import { Produto } from './../entidades/Produto';
-import { Component, Input, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 
 @Component({

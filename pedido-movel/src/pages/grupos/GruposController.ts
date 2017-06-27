@@ -1,4 +1,3 @@
-import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
 import { PedidoController } from './../pedido/PedidoController';
 import { ClienteController } from './../cliente/ClienteController';
 import { Grupo } from './../../entidades/Grupo';

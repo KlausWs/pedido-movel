@@ -1,4 +1,3 @@
-import { FooterComponent } from './../components/footer';
 import { ClienteController } from './../pages/cliente/ClienteController';
 import { PedidoController } from './../pages/pedido/PedidoController';
 import { Component, ViewChild } from '@angular/core';

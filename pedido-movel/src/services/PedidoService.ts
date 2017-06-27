@@ -12,6 +12,9 @@ export class PedidoService {
 
     addProduct(product: Produto) {
         let productClone: Produto = Object.create(product);
+        if(!(<ProdutoUtilizado> productClone).quantidadeSelecionada){
+            (<ProdutoUtilizado> productClone).quantidadeSelecionada = 1;
+        }
         this.products.push(productClone);
     }
 
@@ -58,7 +61,7 @@ export class PedidoService {
 
 export class ProdutoUtilizado extends Produto {
 
-    quantidadeSelecionada: number = 1;
+    quantidadeSelecionada: number;
     garantiaSelecionada: boolean;
     seguroSelecionado: boolean;
 

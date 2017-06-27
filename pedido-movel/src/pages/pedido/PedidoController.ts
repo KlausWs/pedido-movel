@@ -36,13 +36,12 @@ export class PedidoController {
   }
 
   getCondicoes() {
+    this.condicaoPagamentoService.getCondicoes().forEach(condicao => (<CondicaoPagamentoTela>condicao).valorParcela = this.getTotal() / condicao.parcelas);
     return this.condicaoPagamentoService.getCondicoes();
   }
 
   getTotal() {
-    let total: number = this.pedidoService.getTotal();
-    this.condicaoPagamentoService.getCondicoes().forEach(condicao => (<CondicaoPagamentoTela>condicao).valorParcela = total / condicao.parcelas);
-    return total;
+    return this.pedidoService.getTotal();
   }
 
   getSubTotal() {

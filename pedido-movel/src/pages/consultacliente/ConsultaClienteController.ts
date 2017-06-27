@@ -12,10 +12,8 @@ import { Component } from '@angular/core';
 export class ConsultaClienteController { 
     
   clientes: Array<Cliente>;
-  clienteService : ClienteService;
 
-  constructor(public navCtrl: NavController, private _clienteService: ClienteService) {
-    this.clienteService = _clienteService;
+  constructor(public navCtrl: NavController, public clienteService: ClienteService) {
     this.clientes = this.clienteService.clientes;
   }
 

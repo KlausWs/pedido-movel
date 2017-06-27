@@ -1,4 +1,4 @@
-import { MyApp } from './../../app/app.component';
+import { SeniorStoreTool } from './../../app/app.component';
 import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
@@ -13,6 +13,6 @@ export class FinalizacaoController {
   }
 
   voltar() {
-    this.navCtrl.setRoot(MyApp);
+    this.navCtrl.setRoot(SeniorStoreTool);
   }
 }

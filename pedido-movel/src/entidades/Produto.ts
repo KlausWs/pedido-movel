@@ -10,5 +10,6 @@ export class Produto {
   precoSeguro: number; 
   grupo: Grupo;
   imagem: string;
+  complemento: string;
   
 }

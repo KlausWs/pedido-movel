@@ -71,6 +71,11 @@
     margin: auto;
 }
 
+.card-produto-detail-content{
+    height: 600px;
+    margin: auto;
+}
+
 .card-cadastro-cliente-content {
     height: 450px;
     margin: auto;
@@ -127,6 +132,12 @@
     overflow: hidden;
     display: inline-block;
     width: 95% !important;
+}
+
+.nome-produto-card-detail{
+    @extend .produto-column-list-produtos;
+    text-overflow: none !important;
+    white-space: normal !important;
 }
 
 .item-column-list-clientes{

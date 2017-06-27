@@ -35,8 +35,9 @@ export class ProductListComponent {
         produto.selecionado = !produto.selecionado;
     }
 
-    exibirDetalhes() {
-        this.navCtrl.push(DetalheProdutoController);
+
+    exibirDetalhes(produto: Produto){
+        this.navCtrl.push(DetalheProdutoController, {produto: produto});
     }
 
 }

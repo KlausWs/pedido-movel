@@ -5,7 +5,38 @@
 </ion-header>
 
 <ion-content>
-  <button ion-button clear item-end>View</button>
+
+  <ion-card>
+    <ion-card-header>
+      PRODUTO
+    </ion-card-header>
+    <ion-card-content>
+      <div class="barra-divisoria"></div>
+
+      <div class="card-produto-detail-content">
+        <div class="row" style="height: 70%">
+          <div style="display: inline-block" style="width: 50%; height: 100%; padding: 15px;">
+            <img src="assets/img/geladeira.png" style="width: 100%; height: 100%;">
+          </div>
+          <div style="display: inline-block" style="width: 50%; height: 100%; padding: 15px;">
+            <div class="row"> 
+              <span class="nome-produto-card-detail">{{produtoSelecionado.nome}}</span>
+            </div>
+            <div class="row"> 
+              
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 30%; padding: 15px;">
+          <span class="complemento-detail-produto">{{produtoSelecionado.complemento}}</span>
+          
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <product-list cardTitle="PRODUTOS RELACIONADOS" [products]="produtosRelacionados"></product-list>
+
 </ion-content>
 
 <app-footer>

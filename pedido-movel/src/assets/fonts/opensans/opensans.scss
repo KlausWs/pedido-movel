@@ -1,0 +1,14 @@
+// Roboto Font
+// Google
+// Apache License, version 2.0
+// http://www.apache.org/licenses/LICENSE-2.0.html
+
+$roboto-font-path: $font-path !default;
+
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Open Sans"), local("Open Sans-Regular"), url("#{$roboto-font-path}/roboto-regular.woff2") format("woff2"), url("#{$roboto-font-path}/roboto-regular.woff") format("woff"), url("#{$roboto-font-path}/OpenSans-Regular.ttf") format("truetype");
+}
+

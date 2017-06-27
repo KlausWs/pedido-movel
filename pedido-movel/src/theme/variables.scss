@@ -11,6 +11,11 @@ $font-path: "../assets/fonts";
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$font-family-base: "Open Sans";
+$font-family-ios-base: "Open Sans";
+$font-family-md-base: "Open Sans";
+
 $toolbar-background: #009999;
 $toolbar-md-height: 100px;
 $toolbar-ios-height: 100px;
@@ -98,3 +103,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@import "../assets/fonts/opensans/opensans";

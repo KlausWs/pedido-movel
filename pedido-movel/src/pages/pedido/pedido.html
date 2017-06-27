@@ -97,12 +97,12 @@
         </ion-row>
       </ion-grid>
 
-      <div style="margin-top: 50px;">
+      <div float-right margin>
         <div style="display: inline-block; margin-right: 10px;">
-          <button ion-button color="gray">Continuar comprando</button>
+          <button ion-button color="gothic" class="botao-secundario" (click)="continuarComprando()">Continuar comprando</button>
         </div>
         <div style="display: inline-block;">
-          <button ion-button color="blue">Finalizar compra</button>
+          <button ion-button color="bostonblue" class="botao-primario" (click)="finalizar()">Finalizar compra</button>
         </div>
       </div>
 
@@ -110,8 +110,6 @@
   </ion-card>
 
   <product-list cardTitle="COMPRE JUNTO" [products]="getProdutosComplementares()"></product-list>
-  <button ion-button clear item-end (click)='finalizar()'>Finalizar</button>
-
 </ion-content>
 
 <app-footer>

@@ -24,22 +24,17 @@
 
             <ion-grid>
                 <ion-row row *ngFor="let cliente of clientes" class="card-item-produto-edges">
-                    <ion-col col-3>
+                    <ion-col col-6 align-self-center>
                         <span class="label-column-list">Nome do cliente</span><br>
-                        <span class="produto-column-list-produtos">{{cliente.nome}}</span><br>
-                        <span class="produto-column-list-produtos">{{cliente.sobrenome}}</span>
+                        <span class="produto-column-list-produtos">{{cliente.nome}} {{cliente.sobrenome}}</span>
                     </ion-col>
-                    <ion-col>
+                    <ion-col col-2 align-self-center>
                         <span class="label-column-list">CPF</span><br>
                         <span class="item-column-list-clientes">{{cliente.cpf}}</span>
                     </ion-col>
-                    <ion-col>
+                    <ion-col align-self-center>
                         <span class="label-column-list">Telefone</span><br>
                         <span class="item-column-list-clientes">{{cliente.telefone}}</span>
-                    </ion-col>
-                    <ion-col col-3>
-                        <span class="label-column-list">Email</span><br>
-                        <span class="item-column-list-clientes">{{cliente.email}}</span>
                     </ion-col>
                     <ion-col col-auto align-self-center>
                         <button (click)="exibirDetalhes(cliente)" class="button-detail">Detalhes</button>

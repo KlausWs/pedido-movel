@@ -2,8 +2,6 @@ import { Produto } from './../../entidades/Produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
 import { CondicaoPagamentoService } from './../../services/CondicaoPagamentoService';
-import { ClienteController } from './../cliente/ClienteController';
-import { ConsultaClienteController } from './../consultacliente/ConsultaClienteController';
 import { PedidoService, ProdutoUtilizado } from './../../services/PedidoService';
 import { FinalizacaoController } from './../finalizacao/FinalizacaoController';
 import { NavController } from 'ionic-angular';

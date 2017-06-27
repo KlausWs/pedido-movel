@@ -29,14 +29,6 @@ export class PedidoController {
     this.navCtrl.push(FinalizacaoController)
   }
 
-  irParaTodosClientes() {
-    this.navCtrl.push(ConsultaClienteController);
-  }
-
-  irParaCadastroClientes() {
-    this.navCtrl.push(ClienteController);
-  }
-
   getProdutos() {
     return this.pedidoService.getProducts();
   }
@@ -76,6 +68,10 @@ export class PedidoController {
 
   removerProduto(produto: Produto) {
     this.pedidoService.removeProduct(produto);
+  }
+
+  continuarComprando(){
+    this.navCtrl.pop();
   }
 
 }

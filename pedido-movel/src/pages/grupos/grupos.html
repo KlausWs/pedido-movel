@@ -17,15 +17,24 @@
 
 
 <ion-content>
-  
+
   <ion-card>
     <ion-card-header>
       CAMPANHA
     </ion-card-header>
     <ion-card-content>
       <div class="barra-divisoria"></div>
-      <div class="card-campanha-content">
-      </div>
+      <ion-slides pager>
+        <ion-slide >
+          <div class="card-campanha-content">
+          </div>
+        </ion-slide>
+        <ion-slide>
+           <div class="card-campanha-content-2">
+          </div>
+        </ion-slide>
+      </ion-slides>
+
     </ion-card-content>
   </ion-card>
 
@@ -38,7 +47,7 @@
       <ion-grid>
         <ion-row row>
           <ion-col col-lg-4 col-md-6 col-sm-12 col-xs-12 *ngFor="let grupo of grupoService.grupos">
-            <div (click)="searchByGroup(grupo)" class="card-item-edges" >
+            <div (click)="searchByGroup(grupo)" class="card-item-edges">
               <b>{{grupo.nome}}</b>
               <span style="float: right; color:#CCCCCC;">{{grupo.codigo}}</span>
             </div>
@@ -50,21 +59,4 @@
 
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar  style="min-height: 60px">
-    <ion-buttons>
-      <button ion-button style="width: 45%;" (click)="irParaCadastroClientes()">
-        <span class="fa fa-fw fa-user-plus buttons-footer"></span>
-        <span class="buttons-text">
-          Adicionar Cliente
-        </span>
-      </button>
-      <button ion-button style="width: 45%;" (click)="irParaTodosClientes()">
-        <span class="fa fa-fw fa-users buttons-footer"></span>
-        <span class="buttons-text">
-          Todos os Clientes
-        </span>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+<app-footer></app-footer>

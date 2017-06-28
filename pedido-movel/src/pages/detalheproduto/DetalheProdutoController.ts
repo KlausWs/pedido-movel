@@ -1,3 +1,4 @@
+import { PedidoService } from './../../services/PedidoService';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProdutoService } from './../../services/ProdutoService';
 import { Produto } from './../../entidades/Produto';
@@ -12,7 +13,7 @@ export class DetalheProdutoController {
   public produtosRelacionados: Array<Produto>;
   public opt: string;
 
-  constructor(public navCtrl: NavController, public navParam: NavParams, public produtoService: ProdutoService) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public produtoService: ProdutoService, public pedidoService: PedidoService) {
     if (navParam) {
       let produtoParam = navParam.get('produto')
       if (produtoParam) {
@@ -21,6 +22,10 @@ export class DetalheProdutoController {
       }
     }
     this.opt = 'dsc';
+  }
+
+  public adicionarProduto(produto: Produto){
+    this.pedidoService.addProduct(produto);
   }
 
   private getProdutosRelacionados(produto: Produto){

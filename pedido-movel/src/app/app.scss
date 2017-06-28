@@ -74,6 +74,11 @@
     margin: auto;
 }
 
+.primeira-coluna-detail-produto{
+    display: inline-block;
+    width: 40%;
+}
+
 .card-cadastro-cliente-content {
     height: 450px;
     margin: auto;
@@ -130,6 +135,7 @@
 
 .nome-produto-card-detail{
     @extend .produto-column-list-produtos;
+    font-size: 18px !important;
     text-overflow: none !important;
     white-space: normal !important;
 }
@@ -247,6 +253,9 @@
     text-transform: none;
     color: #333333;
 }
+
+
+
 
 .produto-selecionado {
     background-color: #E5EAEA !important;

@@ -18,24 +18,54 @@
           <div style="display: inline-block" style="width: 50%; height: 100%; padding: 15px;">
             <img src="assets/img/geladeira.png" style="width: 100%; height: 100%;">
           </div>
+
           <div style="display: inline-block" style="width: 50%; height: 100%; padding: 15px;">
-            <div class="row">
+            <div class="row" style="margin-bottom: 30px;">
               <span class="nome-produto-card-detail">{{produtoSelecionado.nome}}</span>
             </div>
-            <div class="row">
 
+            <div class="row" style="margin-bottom: 30px;">
+              <div class="primeira-coluna-detail-produto">
+                <span class="label-column-list">Cod</span>
+                <span class="item-column-list-produtos">{{produtoSelecionado.codigo}}</span>
+              </div>
+              <div style="display: inline-block;">
+                <span class="label-column-list">Preço</span>
+                <span class="nome-produto-card-detail">{{produtoSelecionado.preco | brcurrency}}</span>
+              </div>
             </div>
+
+            <div class="row" style="margin-bottom: 40px;">
+             <div class="primeira-coluna-detail-produto">
+                <span class="label-column-list">Estoque</span> 
+                <span class="item-column-list-produtos">{{produtoSelecionado.quantidade}}</span>
+              </div>
+              <div style="display: inline-block; ">
+                <span class="label-column-list">Qtde</span>
+                <span class="item-column-list-produtos">{{produtoSelecionado.quantidade}}</span>
+              </div>
+            </div>
+
+            <div class="row">
+              <div style="display: inline-block; text-align: center;">
+                <button  (click)="adicionarProduto(produtoSelecionado)" ion-button round small style="float: right;">
+                  <span class="fa fa-fw fa-shopping-basket"></span>
+                  <span>Adicionar Item</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div class="row" style="padding: 5px 10px 5px 10px;">
-          <div  style="width: 100%;">
+          <div style="width: 100%;">
             <div padding style="width: 50%">
               <ion-segment [(ngModel)]="opt">
-                <ion-segment-button value="dsc">
+                <ion-segment-button color="bostonblue" value="dsc">
                   Descrição
                 </ion-segment-button>
-                <ion-segment-button value="tec">
+                <ion-segment-button color="bostonblue" value="tec">
                   Informações técnicas
                 </ion-segment-button>
               </ion-segment>

@@ -71,7 +71,6 @@
 }
 
 .card-produto-detail-content{
-    height: 600px;
     margin: auto;
 }
 
@@ -241,11 +240,17 @@
 
 .form-label{
     font-size: 14px !important;
-    
     text-align: left;
     text-transform: none;
     color: #333333;
     line-height: 1.5;
+}
+
+.descricao-detail-produto{
+    font-size: 13px !important;
+    text-align: justify;
+    text-transform: none;
+    color: #333333;
 }
 
 .produto-selecionado {

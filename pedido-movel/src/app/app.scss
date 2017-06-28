@@ -95,12 +95,10 @@
     width: 80px;
     height: 20px;
     color: black;
-    
 }
 
 .label-column-list{
     font-size: 12px !important;
-    
     text-align: left;
     text-transform: none;
     color: #999999;
@@ -114,7 +112,6 @@
 .item-column-list-produtos{
     font-size: 18px !important;
     font-style: bold;
-    
     text-align: left;
     color: #333333;
 }
@@ -123,7 +120,6 @@
     font-size: 16px !important;
     font-style: bold;
     font-weight: 700;
-    
     text-align: left;
     color: black;
     text-overflow: ellipsis !important;
@@ -142,7 +138,6 @@
 .item-column-list-clientes{
     font-size: 15px !important;
     font-style: bold;
-    
     text-align: left;
     color: #333333;
     text-overflow: ellipsis !important;
@@ -190,7 +185,7 @@
 .botao-primario{
     text-transform: none !important;
     color: #fff;
-    
+    font-size: 1.4rem !important;
     border-radius: 4px;
     height: 34px;
     min-width: 80px;
@@ -201,7 +196,7 @@
 .botao-secundario{
     text-transform: none !important;
     color: #fff;
-    
+    font-size: 1.4rem !important;
     border-radius: 4px;
     height: 34px;
     min-width: 80px;
@@ -241,7 +236,6 @@
 
 .form-label{
     font-size: 14px !important;
-    
     text-align: left;
     text-transform: none;
     color: #333333;

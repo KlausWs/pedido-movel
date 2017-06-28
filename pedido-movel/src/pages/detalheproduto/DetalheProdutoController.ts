@@ -10,6 +10,7 @@ export class DetalheProdutoController {
 
   public produtoSelecionado: Produto;
   public produtosRelacionados: Array<Produto>;
+  public opt: string;
 
   constructor(public navCtrl: NavController, public navParam: NavParams, public produtoService: ProdutoService) {
     if (navParam) {
@@ -19,6 +20,7 @@ export class DetalheProdutoController {
         this.produtosRelacionados = this.getProdutosRelacionados(this.produtoSelecionado);
       }
     }
+    this.opt = 'dsc';
   }
 
   private getProdutosRelacionados(produto: Produto){

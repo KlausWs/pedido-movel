@@ -1,6 +1,7 @@
+import { Searchbar } from 'ionic-angular';
 import { PedidoController } from './../pedido/PedidoController';
 import { PedidoService } from './../../services/PedidoService';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ProdutoService } from '../../services/ProdutoService';
 import { Produto } from '../../entidades/Produto';
 import { NavController, NavParams } from 'ionic-angular';
@@ -11,7 +12,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 
 export class ProdutosController {
-
+  @ViewChild('searchbar') searchbar: Searchbar;
   produtoService: ProdutoService;
   produtos: Array<Produto>;
 
@@ -26,6 +27,12 @@ export class ProdutosController {
         this.produtos = this.produtoService.produtos;
       }
     }
+  }
+
+  ionViewDidEnter() {
+      setTimeout(() => {
+        this.searchbar.setFocus();
+      })
   }
 
   consultarProdutos(ev: any) {

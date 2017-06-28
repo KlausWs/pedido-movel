@@ -27,26 +27,28 @@
             </div>
           </div>
         </div>
-        <div class="row" style="padding: 5px 10px 5px 10px;">
-          
-          <div padding style="width: 50%">
-            <ion-segment [(ngModel)]="opt">
-              <ion-segment-button value="dsc">
-                Descrição
-              </ion-segment-button>
-              <ion-segment-button value="tec">
-                Informações técnicas
-              </ion-segment-button>
-            </ion-segment>
-          </div>
 
-          <div [ngSwitch]="opt">
-            <ion-list *ngSwitchCase="'dsc'">
-              <div class="descricao-detail-produto">{{produtoSelecionado.complemento}}</div>
-            </ion-list>
-            <ion-list *ngSwitchCase="'tec'">
-              <div class="descricao-detail-produto">Peso: 10kg - Dimensões: </div>
-            </ion-list>
+        <div class="row" style="padding: 5px 10px 5px 10px;">
+          <div  style="width: 100%;">
+            <div padding style="width: 50%">
+              <ion-segment [(ngModel)]="opt">
+                <ion-segment-button value="dsc">
+                  Descrição
+                </ion-segment-button>
+                <ion-segment-button value="tec">
+                  Informações técnicas
+                </ion-segment-button>
+              </ion-segment>
+            </div>
+
+            <div padding [ngSwitch]="opt" style="width: 100%;  min-height: 150px;">
+              <ion-list *ngSwitchCase="'dsc'">
+                <div class="descricao-detail-produto">{{produtoSelecionado.complemento}}</div>
+              </ion-list>
+              <ion-list *ngSwitchCase="'tec'">
+                <div class="descricao-detail-produto">Peso: 10kg - Dimensões: 1050x300 acon ipsum </div>
+              </ion-list>
+            </div>
           </div>
 
         </div>

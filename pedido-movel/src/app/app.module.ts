@@ -1,3 +1,4 @@
+import { ButtonPedidoComponent } from './../components/buttonPedido';
 import { ProductListComponent } from './../components/productList';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { BrCurrencyPipe } from './../pipes/brCurrency';
@@ -40,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ConsultaClienteController,
     FooterComponent,
     BrCurrencyPipe,
-    ProductListComponent
+    ProductListComponent,
+    ButtonPedidoComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ClienteController,
     ConsultaClienteController,
     FooterComponent,
-    ProductListComponent
+    ProductListComponent,
+    ButtonPedidoComponent
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,4 @@
+import { PedidoController } from './../pedido/PedidoController';
 import { PedidoService } from './../../services/PedidoService';
 import { NavController, NavParams } from 'ionic-angular';
 import { ProdutoService } from './../../services/ProdutoService';
@@ -24,6 +25,10 @@ export class DetalheProdutoController {
     this.opt = 'dsc';
   }
 
+  irParaCarrinho(){
+     this.navCtrl.push(PedidoController);
+  }
+
   public adicionarProduto(produto: Produto){
     this.pedidoService.addProduct(produto);
   }
@@ -33,10 +38,5 @@ export class DetalheProdutoController {
     prods.push(produto);
     return this.produtoService.getProdutosComplementares(prods);
   }
-
-
-
-
-
 
 }

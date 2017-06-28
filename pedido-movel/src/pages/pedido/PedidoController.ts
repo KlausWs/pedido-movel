@@ -68,9 +68,23 @@ export class PedidoController {
     this.pedidoService.removeProduct(produto);
   }
 
-  continuarComprando(){
+  continuarComprando() {
     this.navCtrl.pop();
   }
+
+  increment(produto: ProdutoUtilizado) {
+    produto.quantidadeSelecionada += 1;
+  }
+
+  decrement(produto: ProdutoUtilizado) {
+    if(produto.quantidadeSelecionada > 0){
+      produto.quantidadeSelecionada -= 1;
+    }
+  }
+
+  //teste(e1: CondicaoPagamento, e2: CondicaoPagamento): boolean {
+  //    return (<CondicaoPagamentoTela>e1).valorParcela === (<CondicaoPagamentoTela>e2).valorParcela;
+  //  }
 
 }
 

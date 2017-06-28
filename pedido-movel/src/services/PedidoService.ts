@@ -12,8 +12,8 @@ export class PedidoService {
 
     addProduct(product: Produto) {
         let productClone: Produto = Object.create(product);
-        if(!(<ProdutoUtilizado> productClone).quantidadeSelecionada){
-            (<ProdutoUtilizado> productClone).quantidadeSelecionada = 1;
+        if (!(<ProdutoUtilizado>productClone).quantidadeSelecionada) {
+            (<ProdutoUtilizado>productClone).quantidadeSelecionada = 1;
         }
         this.products.push(productClone);
     }

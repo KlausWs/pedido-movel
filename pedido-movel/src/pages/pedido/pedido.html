@@ -7,7 +7,7 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      PEDIDO
+      <span>PEDIDO</span>
     </ion-card-header>
     <ion-card-content>
       <div class="barra-divisoria"></div>
@@ -23,9 +23,38 @@
             <span class="label-column-list">Cod: {{produto.codigo}}</span>
           </ion-col>
           <ion-col class="col-80px">
-            <span class="label-column-list">Qtde</span><br>
-            <span class="item-column-list-produtos">{{produto.quantidadeSelecionada}}</span>
-            <span class="fa fa-fw fa-times" (click)="removerProduto(produto)"></span>
+            <span class="label-column-list">Qtde</span>
+              <ion-list no-lines>
+                <ion-item style="background-color: #fff !important;">
+              <ion-select class="select-condicao" style="vertical-align: middle; margin: auto !important; padding-top: 0px; height: 30px !important;" [(ngModel)]="produto.quantidadeSelecionada">
+                <ion-option [value]="1" [selected]="true">1</ion-option>
+                <ion-option [value]="2" [selected]="true">2</ion-option>
+                <ion-option [value]="3" [selected]="true">3</ion-option>
+                <ion-option [value]="4" [selected]="true">4</ion-option>
+                <ion-option [value]="5" [selected]="true">5</ion-option>
+                <ion-option [value]="6" [selected]="true">6</ion-option>
+                <ion-option [value]="7" [selected]="true">7</ion-option>
+                <ion-option [value]="8" [selected]="true">8</ion-option>
+                <ion-option [value]="9" [selected]="true">9</ion-option>
+                <ion-option [value]="10" [selected]="true">10</ion-option>
+                <ion-option [value]="11" [selected]="true">11</ion-option>
+                <ion-option [value]="12" [selected]="true">12</ion-option>
+                <ion-option [value]="13" [selected]="true">13</ion-option>
+                <ion-option [value]="14" [selected]="true">14</ion-option>
+                <ion-option [value]="15" [selected]="true">15</ion-option>
+                <ion-option [value]="16" [selected]="true">16</ion-option>
+                <ion-option [value]="17" [selected]="true">17</ion-option>
+                <ion-option [value]="18" [selected]="true">18</ion-option>
+                <ion-option [value]="19" [selected]="true">19</ion-option>
+                <ion-option [value]="20" [selected]="true">20</ion-option>
+              </ion-select>
+              </ion-item>
+              </ion-list>
+              <!--<button ion-button icon-only outline (click)="decrement(produto)" color="gothic" style="height: 100%; width: 20px; margin: 0px 0px 4px 0px !important; vertical-align: middle;"><div class="fa fa-fw fa-minus"></div></button>
+              <span class="item-column-list-produtos">{{produto.quantidadeSelecionada}}</span>
+              <button ion-button icon-only outline (click)="increment(produto)" color="gothic" style="height: 100%; width: 20px; margin: 0px 0px 4px 0px !important; vertical-align: middle;"><div class="fa fa-fw fa-plus"></div></button> -->
+            <a (click)="removerProduto(produto)">Remover</a>
+            
           </ion-col>
           <ion-col col-2>
             <span class="label-column-list">Preço</span><br>
@@ -77,8 +106,12 @@
           </ion-col>
           <ion-col col-auto>
             <span class="label-column-list">à prazo</span><br>
+            
             <ion-select class="select-condicao" [(ngModel)]="condicaoSelecionada">
               <ion-option *ngFor="let condicao of getCondicoes(); let isFirst = first" [value]="condicao" [selected]="isFirst">{{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}</ion-option>
+            <!--  <ion-option *ngFor="let condicao of getCondicoes(); let isFirst = first" [value]="condicao" [selected]="isFirst">
+                {{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}
+              </ion-option> -->
             </ion-select>
           </ion-col>
         </ion-row>

@@ -11,8 +11,30 @@
     </ion-card-header>
     <ion-card-content>
       <div class="barra-divisoria"></div>
-      <span style="margin-left: 5px;">Produtos adicionados </span>
 
+      <div *ngIf="clienteSelecionado" style="margin-bottom: 15px;">
+        <span style="margin-left: 5px;">Dados do cliente</span>
+        <div class="cliente-selecionado-pedido" style="margin: 0px 5px 0px 5px;">
+          <ion-grid style="height: 100%;">
+            <ion-row row style="height: 100%;">
+              <ion-col col-6 align-self-center style="height: 100%;">
+                <span class="label-column-list">Nome do cliente</span><br>
+                <span class="produto-column-list-produtos">{{clienteSelecionado.nome}} {{clienteSelecionado.sobrenome}}</span>
+              </ion-col>
+              <ion-col col-3 align-self-center style="height: 100%;">
+                <span class="label-column-list">CPF</span><br>
+                <span class="item-column-list-clientes">{{clienteSelecionado.cpf}}</span>
+              </ion-col>
+              <ion-col align-self-center style="height: 100%;">
+                <span class="label-column-list">Telefone</span><br>
+                <span class="item-column-list-clientes">{{clienteSelecionado.telefone}}</span>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </div>
+      </div>
+
+      <span style="margin-left: 5px;">Produtos adicionados</span>
       <ion-grid>
         <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges" nowrap>
           <ion-col class="col-80px" hideWhen="small">

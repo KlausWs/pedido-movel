@@ -61,6 +61,11 @@
     margin-bottom: 10px;
 }
 
+.cliente-selecionado-pedido{
+    @extend .card-item-produto-edges;
+    height:100% !important;
+}
+
 .card-campanha-content {
     height: 400px;
     background-size: 100% 100%;
@@ -79,6 +84,13 @@
 
 .card-produto-detail-content{
     margin: auto;
+}
+
+.card-identificar-cliente{
+    margin: 0px !important;
+    margin-right: 0px !important; 
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .primeira-coluna-detail-produto{

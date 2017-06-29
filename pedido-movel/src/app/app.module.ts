@@ -1,4 +1,6 @@
 import { SelectQtdComponent } from './../components/selectQtd';
+import { ToolbarClienteComponent } from './../components/toolbarClientes';
+import { IdentificarClienteController } from './../pages/identificarcliente/IdentificarClienteController';
 import { ButtonPedidoComponent } from './../components/buttonPedido';
 import { ProductListComponent } from './../components/productList';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
@@ -44,7 +46,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrCurrencyPipe,
     ProductListComponent,
     ButtonPedidoComponent,
-    SelectQtdComponent
+    SelectQtdComponent,
+    ToolbarClienteComponent,
+    IdentificarClienteController
   ],
   imports: [
     BrowserModule,
@@ -66,7 +70,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FooterComponent,
     ProductListComponent,
     ButtonPedidoComponent,
-    SelectQtdComponent
+    SelectQtdComponent,
+    ToolbarClienteComponent,
+    IdentificarClienteController
   ],
   providers: [
     StatusBar,

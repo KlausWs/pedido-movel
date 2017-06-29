@@ -61,6 +61,11 @@
     margin-bottom: 10px;
 }
 
+.cliente-selecionado-pedido{
+    @extend .card-item-produto-edges;
+    height:100% !important;
+}
+
 .card-campanha-content {
     height: 400px;
     background-size: 100% 100%;

@@ -23,7 +23,6 @@
     background-position: center center;
 }
 
-
 .buttons-header {
     float: right;
     margin: 10px;
@@ -269,16 +268,15 @@
     color: #333333;
 }
 
-
-
-
 .produto-selecionado {
     background-color: #E5EAEA !important;
 }
 
-.select-condicao {
+.select {
     max-width: 100%; 
     padding-left: 0px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .pedido-total-valor {

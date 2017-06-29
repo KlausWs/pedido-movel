@@ -1,3 +1,4 @@
+import { SelectQtdComponent } from './../components/selectQtd';
 import { ToolbarClienteComponent } from './../components/toolbarClientes';
 import { IdentificarClienteController } from './../pages/identificarcliente/IdentificarClienteController';
 import { ButtonPedidoComponent } from './../components/buttonPedido';
@@ -45,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrCurrencyPipe,
     ProductListComponent,
     ButtonPedidoComponent,
+    SelectQtdComponent,
     ToolbarClienteComponent,
     IdentificarClienteController
   ],
@@ -68,6 +70,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     FooterComponent,
     ProductListComponent,
     ButtonPedidoComponent,
+    SelectQtdComponent,
     ToolbarClienteComponent,
     IdentificarClienteController
   ],

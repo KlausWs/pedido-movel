@@ -1,3 +1,7 @@
+import { IdentificarClienteController } from './../identificarcliente/IdentificarClienteController';
+import { Cliente } from './../../entidades/Cliente';
+
+import { ModalController, ViewController } from 'ionic-angular';
 import { Produto } from './../../entidades/Produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
@@ -16,15 +20,29 @@ export class PedidoController {
   produtoService: ProdutoService;
   condicaoPagamentoService: CondicaoPagamentoService;
   condicaoPagamento: CondicaoPagamento;
+  clienteSelecionado: Cliente;
 
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService) {
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController) {
     this.pedidoService = _pedidoService;
     this.condicaoPagamentoService = _condicaoPagamentoService;
     this.produtoService = _produtoService;
   }
 
+  abrirSelecaoCliente() {
+    let selecaoClienteModal = this.modalController.create(IdentificarClienteController);
+    selecaoClienteModal.onDidDismiss(data => {
+      console.log(data);
+      this.clienteSelecionado = data;
+    });
+    selecaoClienteModal.present();
+  }
+
   finalizar() {
-    this.navCtrl.push(FinalizacaoController)
+    if (this.clienteSelecionado) {
+      this.navCtrl.push(FinalizacaoController)
+    } else {
+      this.abrirSelecaoCliente();
+    }
   }
 
   getProdutos() {
@@ -77,7 +95,7 @@ export class PedidoController {
   }
 
   decrement(produto: ProdutoUtilizado) {
-    if(produto.quantidadeSelecionada > 0){
+    if (produto.quantidadeSelecionada > 0) {
       produto.quantidadeSelecionada -= 1;
     }
   }

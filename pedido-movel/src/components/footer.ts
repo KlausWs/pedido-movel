@@ -7,18 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: "footer.html",
   selector: "app-footer"
 })
-export class FooterComponent{
+export class FooterComponent {
 
-constructor(public navCtrl: NavController){
 
-}
-    
-  irParaTodosClientes(){
-    this.navCtrl.push(ConsultaClienteController);
-  }
-
-  irParaCadastroClientes(){
-    this.navCtrl.push(ClienteController);
-  }
 }
 

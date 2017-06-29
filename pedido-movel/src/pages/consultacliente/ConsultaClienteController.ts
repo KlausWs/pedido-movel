@@ -1,6 +1,5 @@
 import { ClienteController } from './../cliente/ClienteController';
 import { Cliente } from './../../entidades/Cliente';
-import { PedidoController } from './../pedido/PedidoController';
 import { ClienteService } from './../../services/ClienteService';
 import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
@@ -23,10 +22,6 @@ export class ConsultaClienteController {
 
   exibirDetalhes(cliente: Cliente){
     this.navCtrl.push(ClienteController, { cliente: cliente });
-  }
-
-  irParaCarrinho(){
-     this.navCtrl.push(PedidoController);
   }
 
 }

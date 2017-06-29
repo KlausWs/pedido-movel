@@ -1,5 +1,4 @@
 import { ClienteService } from './../../services/ClienteService';
-import { PedidoController } from './../pedido/PedidoController';
 import { Cliente } from './../../entidades/Cliente';
 import { NavController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
@@ -32,11 +31,6 @@ export class ClienteController {
 
   cancelar() {
     this.navCtrl.pop();
-  }
-
-
-  irParaCarrinho() {
-    this.navCtrl.push(PedidoController);
   }
 
   cadastrar() {

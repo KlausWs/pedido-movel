@@ -39,8 +39,4 @@ export class ProdutosController {
     this.produtos = this.produtoService.filterByText(ev.target.value);
   }
 
-  irParaCarrinho() {
-    this.navCtrl.push(PedidoController);
-  }
-
 }

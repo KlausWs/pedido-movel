@@ -57,6 +57,10 @@ export class PedidoService {
         return this.getSubTotal() + this.getTotalGarantia() + this.getTotalSeguro();
     }
 
+    getQuantidadeProdutos(){
+        return this.products.length;
+    }
+
 }
 
 export class ProdutoUtilizado extends Produto {

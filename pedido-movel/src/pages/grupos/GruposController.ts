@@ -24,15 +24,6 @@ export class GruposController {
   searchByGroup(grupo: Grupo) {
     this.navCtrl.push(ProdutosController, { grupo: grupo });
   }
-
-  irParaProdutos() {
-    this.navCtrl.push(ProdutosController);
-  }
-
-  irParaCarrinho(){
-    this.navCtrl.push(PedidoController);
-  }
-
   
 }
 

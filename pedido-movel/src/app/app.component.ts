@@ -4,8 +4,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { ListPage } from '../pages/list/list';
 import { GruposController } from '../pages/grupos/GruposController';
 
 
@@ -16,18 +14,9 @@ export class SeniorStoreTool {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = GruposController;
-  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      { title: 'Carrinho', component: PedidoController },
-      { title: 'Cliente', component: ClienteController },
-      { title: 'List', component: ListPage }
-    ];
-
   }
 
   initializeApp() {

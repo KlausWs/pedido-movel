@@ -25,10 +25,6 @@ export class DetalheProdutoController {
     this.opt = 'dsc';
   }
 
-  irParaCarrinho(){
-     this.navCtrl.push(PedidoController);
-  }
-
   public adicionarProduto(produto: Produto){
     this.pedidoService.addProduct(produto);
   }

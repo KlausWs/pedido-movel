@@ -1,14 +1,18 @@
-
-<ion-content padding style="height: 100%;">
-    <div style="height: 50px;">
+<ion-card class="card-identificar-cliente">
+    <ion-card-header style="border-radius: 0px !important;">
         <div>
-            <div>
-                <p>IDENTIFICAR CLIENTE</p>
-            </div>
-            <div>
-                <p>É preciso identificar um cliente para este pedido</p>
+            <div style="display: inline-block; min-height: 40px; width: 85%">IDENTIFICAR CLIENTE</div>
+            <div style="display: inline-block; max-height: 40px;">
+                <button style="max-height: 40px;" (click)="dismiss()" clear ion-button>
+                    <span class="fa fa-fw fa-times"></span>
+                </button>
             </div>
         </div>
+        <div>
+            <span style="color: black !important; margin-left: 5px;">É preciso identificar um cliente para este pedido</span>
+        </div>
+    </ion-card-header>
+    <ion-card-content>
         <toolbar-clientes></toolbar-clientes>
-    </div>
-</ion-content>
+    </ion-card-content>
+</ion-card>

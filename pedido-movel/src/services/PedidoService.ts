@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Cliente } from './../entidades/Cliente';
-=======
-import { Pedido } from './../entidades/Pedido';
->>>>>>> e21b481e77a497cee1f3187876a2e5d59ce1f575
 import { Injectable } from '@angular/core';
 import { Produto } from '../entidades/Produto';
 
@@ -10,11 +6,7 @@ import { Produto } from '../entidades/Produto';
 export class PedidoService {
 
     products: Array<Produto>;
-<<<<<<< HEAD
     clienteSelecionado: Cliente;
-=======
-    pedido: Pedido;
->>>>>>> e21b481e77a497cee1f3187876a2e5d59ce1f575
 
     constructor() {
         this.products = new Array<Produto>();

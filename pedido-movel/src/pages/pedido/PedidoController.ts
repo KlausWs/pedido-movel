@@ -21,19 +21,10 @@ export class PedidoController {
   pedidoService: PedidoService;
   produtoService: ProdutoService;
   condicaoPagamentoService: CondicaoPagamentoService;
-<<<<<<< HEAD
   condicaoPagamento: CondicaoPagamento;
-
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController, public navParam: NavParams) {
-=======
   formaPagamentoService: FormaPagamentoService;
 
-  formaSelecionada: FormaPagamento;
-  condicaoSelecionada: CondicaoPagamento;
-  clienteSelecionado: Cliente;
-
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _formaPagamentoService: FormaPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController) {
->>>>>>> e21b481e77a497cee1f3187876a2e5d59ce1f575
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _formaPagamentoService: FormaPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController, public navParam: NavParams) {
     this.pedidoService = _pedidoService;
     this.condicaoPagamentoService = _condicaoPagamentoService;
     this.formaPagamentoService = _formaPagamentoService;

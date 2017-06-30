@@ -1,3 +1,4 @@
+import { FormaPagamentoService } from './../services/FormaPagamentoService';
 import { SelectQtdComponent } from './../components/selectQtd';
 import { ToolbarClienteComponent } from './../components/toolbarClientes';
 import { IdentificarClienteController } from './../pages/identificarcliente/IdentificarClienteController';
@@ -76,6 +77,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ProdutoService,
     ClienteService,
     CondicaoPagamentoService,
+    FormaPagamentoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: "pt-BR"}
   ]

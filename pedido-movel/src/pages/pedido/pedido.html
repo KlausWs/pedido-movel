@@ -37,14 +37,14 @@
       <span style="margin-left: 5px;">Produtos adicionados</span>
       <ion-grid>
         <ion-row row *ngFor="let produto of getProdutos()" class="card-item-produto-edges" nowrap>
-          <ion-col class="col-80px" hideWhen="small">
+          <ion-col class="col-85px" hideWhen="small">
             <img src="assets/img/geladeira.png" style="width: 70px; height: 70px;">
           </ion-col>
           <ion-col col-4 col-auto align-self-center>
             <span class="produto-column-list-produtos">{{produto.nome}}</span><br>
             <span class="label-column-list">Cod: {{produto.codigo}}</span>
           </ion-col>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
             <span class="label-column-list">Qtde</span>
             <select-qtd [(quantidade)]="produto.quantidadeSelecionada"></select-qtd>
             <!--<button ion-button icon-only outline (click)="decrement(produto)" color="gothic" style="height: 100%; width: 20px; margin: 0px 0px 4px 0px !important; vertical-align: middle;"><div class="fa fa-fw fa-minus"></div></button>
@@ -68,11 +68,11 @@
         </ion-row>
 
         <ion-row row class="pedido-subtotal" nowrap>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
           </ion-col>
           <ion-col col-4 col-auto>
           </ion-col>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
             <span class="produto-column-list-produtos">Subtotal</span>
           </ion-col>
           <ion-col col-2>
@@ -90,11 +90,11 @@
         </ion-row>
 
         <ion-row row class="pedido-total" nowrap>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
           </ion-col>
           <ion-col col-auto col-4>
           </ion-col>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
             <span class="produto-column-list-produtos">Total</span>
           </ion-col>
           <ion-col col-3>
@@ -103,26 +103,24 @@
           </ion-col>
           <ion-col col-auto>
             <span class="label-column-list">à prazo</span><br>
-
             <ion-select class="select-condicao" [(ngModel)]="condicaoSelecionada">
               <ion-option *ngFor="let condicao of getCondicoes(); let isFirst = first" [value]="condicao" [selected]="isFirst">{{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}</ion-option>
-              <!--  <ion-option *ngFor="let condicao of getCondicoes(); let isFirst = first" [value]="condicao" [selected]="isFirst">
-                {{condicao.parcelas}}x {{condicao.valorParcela | brcurrency}}
-              </ion-option> -->
             </ion-select>
           </ion-col>
         </ion-row>
 
         <ion-row row nowrap>
-          <ion-col class="col-80px">
+          <ion-col class="col-85px">
           </ion-col>
           <ion-col col-auto col-4>
           </ion-col>
-          <ion-col>
+          <ion-col align-self-center>
             <span class="produto-column-list-produtos">Forma de pagamento</span>
           </ion-col>
           <ion-col col-3>
-
+            <ion-select class="select-condicao" [(ngModel)]="formaSelecionada">
+              <ion-option *ngFor="let forma of getFormas(); let isFirst = first" [value]="forma" [selected]="isFirst">{{forma.codigo}} - {{forma.descricao}}</ion-option>
+            </ion-select>
           </ion-col>
         </ion-row>
       </ion-grid>

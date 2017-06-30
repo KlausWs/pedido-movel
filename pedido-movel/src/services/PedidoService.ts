@@ -92,7 +92,7 @@ export class PedidoService {
     }
 
     finalizar(){
-        this.products = undefined;
+        this.products = new Array<Produto>();
         this.clienteSelecionado = undefined;
         this.condicaoSelecionada = undefined;
     }

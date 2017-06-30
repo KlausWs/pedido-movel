@@ -1,3 +1,6 @@
+import { PedidoController } from './../pedido/PedidoController';
+import { PedidoService } from './../../services/PedidoService';
+import { IdentificarClienteController } from './../identificarcliente/IdentificarClienteController';
 import { ClienteService } from './../../services/ClienteService';
 import { Cliente } from './../../entidades/Cliente';
 import { NavController, NavParams } from 'ionic-angular';
@@ -10,7 +13,7 @@ export class ClienteController {
 
   cliente: Cliente;
 
-  constructor(public navCtrl: NavController, public navParam: NavParams, public clienteService: ClienteService) {
+  constructor(public navCtrl: NavController, public navParam: NavParams, public clienteService: ClienteService, public pedidoService: PedidoService) {
     if (navParam) {
       let clienteParam = navParam.get('cliente')
       if (clienteParam) {
@@ -22,10 +25,14 @@ export class ClienteController {
   }
 
   salvar(model: Cliente, isValid: boolean) {
-    console.log(model);
     if (isValid) {
       this.clienteService.gravar(model);
-      this.navCtrl.pop();
+      if (this.navCtrl.getPrevious().data.component === IdentificarClienteController) {
+        this.pedidoService.setCliente(model);
+        this.navCtrl.remove(this.navCtrl.length()-2, 2);
+      } else {
+        this.navCtrl.pop();
+      }
     }
   }
 

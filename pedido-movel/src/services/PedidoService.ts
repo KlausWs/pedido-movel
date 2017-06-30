@@ -1,3 +1,4 @@
+import { Cliente } from './../entidades/Cliente';
 import { Injectable } from '@angular/core';
 import { Produto } from '../entidades/Produto';
 
@@ -5,9 +6,14 @@ import { Produto } from '../entidades/Produto';
 export class PedidoService {
 
     products: Array<Produto>;
+    clienteSelecionado: Cliente;
 
     constructor() {
         this.products = new Array<Produto>();
+    }
+
+    public setCliente(cliente: Cliente){
+        this.clienteSelecionado = cliente;
     }
 
     addProduct(product: Produto) {

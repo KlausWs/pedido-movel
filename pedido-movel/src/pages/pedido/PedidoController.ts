@@ -1,7 +1,7 @@
 import { IdentificarClienteController } from './../identificarcliente/IdentificarClienteController';
 import { Cliente } from './../../entidades/Cliente';
 
-import { ModalController, ViewController } from 'ionic-angular';
+import { ModalController, ViewController, NavParams } from 'ionic-angular';
 import { Produto } from './../../entidades/Produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
@@ -20,9 +20,8 @@ export class PedidoController {
   produtoService: ProdutoService;
   condicaoPagamentoService: CondicaoPagamentoService;
   condicaoPagamento: CondicaoPagamento;
-  clienteSelecionado: Cliente;
 
-  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController) {
+  constructor(public navCtrl: NavController, private _pedidoService: PedidoService, private _condicaoPagamentoService: CondicaoPagamentoService, private _produtoService: ProdutoService, public modalController: ModalController, public navParam: NavParams) {
     this.pedidoService = _pedidoService;
     this.condicaoPagamentoService = _condicaoPagamentoService;
     this.produtoService = _produtoService;
@@ -30,15 +29,15 @@ export class PedidoController {
 
   abrirSelecaoCliente() {
     let selecaoClienteModal = this.modalController.create(IdentificarClienteController);
-    selecaoClienteModal.onDidDismiss(data => {
-      console.log(data);
-      this.clienteSelecionado = data;
-    });
     selecaoClienteModal.present();
   }
 
+  getClienteSelecionado(){
+    return this.pedidoService.clienteSelecionado;
+  }
+
   finalizar() {
-    if (this.clienteSelecionado) {
+    if (this.getClienteSelecionado()) {
       this.navCtrl.push(FinalizacaoController)
     } else {
       this.abrirSelecaoCliente();

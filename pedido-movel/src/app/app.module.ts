@@ -1,3 +1,4 @@
+import { FinalizarPedidoController } from './../pages/finalizarpedido/FinalizarPedidoController';
 import { FormaPagamentoService } from './../services/FormaPagamentoService';
 import { SelectQtdComponent } from './../components/selectQtd';
 import { ToolbarClienteComponent } from './../components/toolbarClientes';
@@ -14,7 +15,6 @@ import { ProdutoService } from './../services/ProdutoService';
 import { PedidoService } from './../services/PedidoService';
 import { GrupoService } from './../services/GrupoService';
 import { ClienteController } from './../pages/cliente/ClienteController';
-import { FinalizacaoController } from './../pages/finalizacao/FinalizacaoController';
 import { PedidoController } from './../pages/pedido/PedidoController';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -36,7 +36,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GruposController,
     DetalheProdutoController,
     PedidoController,
-    FinalizacaoController,
     ClienteController,
     ConsultaClienteController,
     FooterComponent,
@@ -45,7 +44,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ButtonPedidoComponent,
     SelectQtdComponent,
     ToolbarClienteComponent,
-    IdentificarClienteController
+    IdentificarClienteController,
+    FinalizarPedidoController
   ],
   imports: [
     BrowserModule,
@@ -59,7 +59,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GruposController,
     DetalheProdutoController,
     PedidoController,
-    FinalizacaoController,
     ClienteController,
     ConsultaClienteController,
     FooterComponent,
@@ -67,7 +66,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ButtonPedidoComponent,
     SelectQtdComponent,
     ToolbarClienteComponent,
-    IdentificarClienteController
+    IdentificarClienteController,
+    FinalizarPedidoController
   ],
   providers: [
     StatusBar,

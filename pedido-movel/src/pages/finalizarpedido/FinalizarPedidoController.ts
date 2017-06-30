@@ -1,18 +1,17 @@
-import { Cliente } from './../../entidades/Cliente';
+import { GruposController } from './../grupos/GruposController';
 import { ViewController, NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
-
 @Component({
-    templateUrl: 'identificarcliente.html',
+    templateUrl: 'finalizarpedido.html',
 })
-export class IdentificarClienteController {
+export class FinalizarPedidoController {
 
     constructor(public viewCtrl: ViewController, public navCtrl: NavController) {
     }
 
-    dismiss() {
-        this.navCtrl.pop();
+    ok() {
+        this.navCtrl.push(GruposController);
     }
 
 }

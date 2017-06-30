@@ -1,10 +1,8 @@
 import { FinalizarPedidoController } from './../finalizarpedido/FinalizarPedidoController';
 import { FormaPagamentoService } from './../../services/FormaPagamentoService';
-import { FormaPagamento } from './../../entidades/FormaPagamento';
 import { IdentificarClienteController } from './../identificarcliente/IdentificarClienteController';
-import { Cliente } from './../../entidades/Cliente';
 
-import { ModalController, ViewController, NavParams } from 'ionic-angular';
+import { ModalController, NavParams } from 'ionic-angular';
 import { Produto } from './../../entidades/Produto';
 import { ProdutoService } from './../../services/ProdutoService';
 import { CondicaoPagamento } from './../../entidades/CondicaoPagamento';
@@ -42,6 +40,7 @@ export class PedidoController {
 
   finalizar() {
     if (this.getClienteSelecionado()) {
+      this.pedidoService.finalizar();
       let selecaoClienteModal = this.modalController.create(FinalizarPedidoController);
       selecaoClienteModal.present();
     } else {

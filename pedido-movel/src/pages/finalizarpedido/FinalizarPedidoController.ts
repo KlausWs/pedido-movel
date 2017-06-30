@@ -8,10 +8,11 @@ import { Component } from '@angular/core';
 export class FinalizarPedidoController {
 
     constructor(public viewCtrl: ViewController, public navCtrl: NavController) {
+
     }
 
     ok() {
-        this.navCtrl.push(GruposController);
+        this.navCtrl.setRoot(GruposController);
     }
 
 }

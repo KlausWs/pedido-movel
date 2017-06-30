@@ -1,3 +1,5 @@
+import { FormaPagamento } from './../entidades/FormaPagamento';
+import { CondicaoPagamento } from './../entidades/CondicaoPagamento';
 import { Cliente } from './../entidades/Cliente';
 import { Injectable } from '@angular/core';
 import { Produto } from '../entidades/Produto';
@@ -7,13 +9,23 @@ export class PedidoService {
 
     products: Array<Produto>;
     clienteSelecionado: Cliente;
+    condicaoSelecionada: CondicaoPagamento;
+    formaSelecionada: FormaPagamento;
 
     constructor() {
         this.products = new Array<Produto>();
     }
 
-    public setCliente(cliente: Cliente){
+    setCliente(cliente: Cliente){
         this.clienteSelecionado = cliente;
+    }
+
+    setCondicaoPagamento(condicao: CondicaoPagamento){
+        this.condicaoSelecionada = condicao;
+    }
+
+    setFormaPagamento(forma: FormaPagamento){
+        this.formaSelecionada = forma;
     }
 
     addProduct(product: Produto) {
@@ -31,6 +43,18 @@ export class PedidoService {
 
     getProducts() {
         return this.products;
+    }
+
+    getClienteSelecionado(){
+        return this.clienteSelecionado;
+    }
+
+    getCondicaoPagamentoSelecionada(){
+        return this.condicaoSelecionada;
+    }
+
+    getFormaPagamentoSelecionada(){
+        return this.formaSelecionada;
     }
 
     getSubTotal() {
@@ -65,6 +89,12 @@ export class PedidoService {
 
     getQuantidadeProdutos(){
         return this.products.length;
+    }
+
+    finalizar(){
+        this.products = undefined;
+        this.clienteSelecionado = undefined;
+        this.condicaoSelecionada = undefined;
     }
 
 }

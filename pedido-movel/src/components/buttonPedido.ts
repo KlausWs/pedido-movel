@@ -2,7 +2,7 @@ import { PedidoService } from './../services/PedidoService';
 import { ProdutosController } from './../pages/produtos/ProdutosController';
 import { PedidoController } from './../pages/pedido/PedidoController';
 import { NavController } from 'ionic-angular';
-import { Component, trigger, state, style, transition, animate, keyframes } from '@angular/core';
+import { Component  } from '@angular/core';
 
 @Component({
   templateUrl: "buttonPedido.html",
